@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import android.content.Intent;
 import android.os.Bundle;

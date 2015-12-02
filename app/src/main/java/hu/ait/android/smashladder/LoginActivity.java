@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,7 +14,6 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -36,15 +35,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
-import hu.ait.android.smashladder2.player.PlayerContent;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import hu.ait.android.smashladder2.player.PlayerContent;
+import hu.ait.android.smashladder.player.PlayerContent;
 
 /**
  * A list fragment representing a list of Players. This fragment

@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import hu.ait.android.smashladder2.player.PlayerContent;
+import hu.ait.android.smashladder.player.PlayerContent;
 
 /**
  * A fragment representing a single Player detail screen.

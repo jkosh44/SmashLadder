@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2.player;
+package hu.ait.android.smashladder.player;
 
 import java.util.ArrayList;
 import java.util.HashMap;

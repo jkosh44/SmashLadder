@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import android.app.Application;
 
@@ -9,7 +9,7 @@ import com.parse.ParsePush;
 /**
  * Created by joe on 11/23/15.
  */
-public class SmashLadder2Application extends Application {
+public class SmashLadderApplication extends Application {
 
     @Override
     public void onCreate() {
