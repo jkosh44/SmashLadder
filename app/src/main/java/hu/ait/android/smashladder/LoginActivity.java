@@ -60,9 +60,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
+    public static final String NAME_TAG = "NAME_TAG";
 
     // UI references.
     private AutoCompleteTextView mEmailView;
+    private EditText mTagView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -76,6 +78,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
+
+        mTagView = (EditText) findViewById(R.id.etTag);
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -218,6 +222,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
+        String tag = mTagView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -226,6 +231,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if ("".equals(password) /*&& !isPasswordValid(password)*/) {
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
+            cancel = true;
+        }
+
+        if("".equals(tag)) {
+            mTagView.setError(getString(R.string.error_field_required));
+            focusView = mTagView;
             cancel = true;
         }
 
@@ -250,6 +261,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             ParseUser user = new ParseUser();
             user.setUsername(email);
             user.setPassword(password);
+            user.put(NAME_TAG, tag);
 
             user.signUpInBackground(new SignUpCallback() {
                 @Override
