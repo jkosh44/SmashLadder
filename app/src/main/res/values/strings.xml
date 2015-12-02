@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmashLadder2</string>
+    <string name="app_name">SmashLadder</string>
     
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -16,4 +16,5 @@
     <string name="action_register">Register</string>
     <string name="title_player_list">Players</string>
     <string name="title_player_detail">Player Detail</string>
+    <string name="name_or_tag">Name or Tag (only needed when registering)</string>
 </resources>

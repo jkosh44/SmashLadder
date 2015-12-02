@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import org.junit.Test;
 

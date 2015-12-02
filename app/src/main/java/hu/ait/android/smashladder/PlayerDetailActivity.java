@@ -1,4 +1,4 @@
-package hu.ait.android.smashladder2;
+package hu.ait.android.smashladder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
