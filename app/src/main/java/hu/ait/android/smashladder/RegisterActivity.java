@@ -4,21 +4,26 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.CountCallback;
+import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
+import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
 
     public static final String NAME_TAG = "NAME_TAG";
+    public static final String RANK_TAG = "RANK_TAG";
 
     private EditText mEmailView;
     private EditText mTagView;
@@ -48,7 +53,11 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                attemptRegister();
+                try {
+                    attemptRegister();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -63,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void attemptRegister() {
+    private void attemptRegister() throws ParseException {
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
@@ -79,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
             cancel = true;
         }
 
-        if("".equals(tag)) {
+        if ("".equals(tag)) {
             mTagView.setError(getString(R.string.error_field_required));
             focusView = mTagView;
             cancel = true;
@@ -103,10 +112,15 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             //creates new user
             showProgress(true);
+
+            ParseQuery<ParseUser> query = ParseUser.getQuery();
+            int userAmount = query.count();
+
             ParseUser user = new ParseUser();
             user.setUsername(email);
             user.setPassword(password);
             user.put(NAME_TAG, tag);
+            user.put(RANK_TAG, userAmount + 1);
 
             user.signUpInBackground(new SignUpCallback() {
                 @Override
