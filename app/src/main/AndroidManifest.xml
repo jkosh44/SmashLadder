@@ -82,6 +82,8 @@
 
         </activity>
 
+
+
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="hu.ait.android.smashladder.PlayerListActivity" />
