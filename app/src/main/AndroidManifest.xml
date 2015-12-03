@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="hu.ait.android.smashladder">
+=======
+    package="hu.ait.android.smashladder" >
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -29,10 +33,17 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
+=======
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="hu.ait.android.smashladder.LoginActivity"
+            android:label="@string/app_name" >
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,7 +55,11 @@
 
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
+<<<<<<< HEAD
             android:exported="false">
+=======
+            android:exported="false" >
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
                 <action android:name="com.parse.push.intent.DELETE" />
@@ -53,7 +68,11 @@
         </receiver>
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
+<<<<<<< HEAD
             android:permission="com.google.android.c2dm.permission.SEND">
+=======
+            android:permission="com.google.android.c2dm.permission.SEND" >
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
@@ -64,6 +83,7 @@
         </receiver>
 
         <activity
+<<<<<<< HEAD
             android:name=".PlayerListActivity"
             android:label="@string/title_player_list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
@@ -72,11 +92,25 @@
             android:label="@string/title_player_detail"
             android:parentActivityName=".PlayerListActivity"
             android:theme="@style/AppTheme.NoActionBar">
+=======
+            android:name="hu.ait.android.smashladder.PlayerListActivity"
+            android:label="@string/title_player_list"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="hu.ait.android.smashladder.PlayerDetailActivity"
+            android:label="@string/title_player_detail"
+            android:parentActivityName="hu.ait.android.smashladder.PlayerListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hu.ait.android.smashladder.PlayerListActivity" />
         </activity>
+<<<<<<< HEAD
         <activity android:name=".RegisterActivity"></activity>
+=======
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
     </application>
 
 </manifest>

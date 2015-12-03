@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">SmashLadder</string>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -16,6 +20,10 @@
     <string name="action_register">Register</string>
     <string name="title_player_list">Players</string>
     <string name="title_player_detail">Player Detail</string>
+<<<<<<< HEAD
     <string name="name_or_tag">Name or Tag</string>
     <string name="cancel">Cancel</string>
+=======
+    <string name="name_or_tag">Name or Tag (only needed when registering)</string>
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
 </resources>

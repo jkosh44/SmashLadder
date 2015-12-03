@@ -52,7 +52,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
+<<<<<<< HEAD
     public static final String EMAIL_TAG = "EMAIL_TAG";
+=======
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -61,10 +64,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
+<<<<<<< HEAD
 
 
     // UI references.
     private AutoCompleteTextView mEmailView;
+=======
+    public static final String NAME_TAG = "NAME_TAG";
+
+    // UI references.
+    private AutoCompleteTextView mEmailView;
+    private EditText mTagView;
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -79,6 +90,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
+<<<<<<< HEAD
+=======
+        mTagView = (EditText) findViewById(R.id.etTag);
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -218,11 +233,72 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private void attemptRegister() {
+<<<<<<< HEAD
         Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
         registerIntent.putExtra(EMAIL_TAG, mEmailView.getText().toString());
         startActivity(registerIntent);
         finish();
         //TODO: should we finish()?
+=======
+        // Store values at the time of the login attempt.
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+        String tag = mTagView.getText().toString();
+
+        boolean cancel = false;
+        View focusView = null;
+
+        // Check for a valid password, if the user entered one.
+        if ("".equals(password) /*&& !isPasswordValid(password)*/) {
+            mPasswordView.setError(getString(R.string.error_field_required));
+            focusView = mPasswordView;
+            cancel = true;
+        }
+
+        if("".equals(tag)) {
+            mTagView.setError(getString(R.string.error_field_required));
+            focusView = mTagView;
+            cancel = true;
+        }
+
+        // Check for a valid email address.
+        if ("".equals(email)) {
+            mEmailView.setError(getString(R.string.error_field_required));
+            focusView = mEmailView;
+            cancel = true;
+        } else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }
+
+        if (cancel) {
+            // There was an error; don't attempt login and focus the first
+            // form field with an error.
+            focusView.requestFocus();
+        } else {
+            //creates new user
+            showProgress(true);
+            ParseUser user = new ParseUser();
+            user.setUsername(email);
+            user.setPassword(password);
+            user.put(NAME_TAG, tag);
+
+            user.signUpInBackground(new SignUpCallback() {
+                @Override
+                public void done(ParseException e) {
+                    showProgress(false);
+
+                    if (e == null) {
+                        Toast.makeText(LoginActivity.this, "Registration ok", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Registration failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        }
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
     }
 
     private boolean isEmailValid(String email) {

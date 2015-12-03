@@ -45,6 +45,20 @@
 
             </android.support.design.widget.TextInputLayout>
 
+<<<<<<< HEAD
+=======
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etTag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name_or_tag" />
+
+            </android.support.design.widget.TextInputLayout>
+>>>>>>> 139d9f9c500010a5f723911f66f3e11d69e42099
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
