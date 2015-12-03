@@ -7,6 +7,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import hu.ait.android.smashladder.player.PlayerContent;
 
 /**
@@ -71,12 +79,28 @@ public class PlayerListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<PlayerContent.PlayerItem>(
-                getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                PlayerContent.ITEMS));
+
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.findInBackground(new FindCallback<ParseUser>() {
+            public void done(List<ParseUser> objects, ParseException e) {
+                // The query was successful.
+                if (e == null) {
+                    setListAdapter(new ArrayAdapter<PlayerContent.PlayerItem>(
+                            getActivity(),
+                            android.R.layout.simple_list_item_activated_1,
+                            android.R.id.text1,
+                            new ArrayList<ParseUser>(objects)));
+                }
+                else {
+                    // Something went wrong.
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
     }
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -115,7 +139,7 @@ public class PlayerListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(PlayerContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(PlayerContent.ITEMS.get(position).name);
     }
 
     @Override

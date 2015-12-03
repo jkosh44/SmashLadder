@@ -113,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
             //creates new user
             showProgress(true);
 
-            ParseQuery<ParseUser> query = ParseUser.getQuery();
+            final ParseQuery<ParseUser> query = ParseUser.getQuery();
             int userAmount = query.count();
 
             ParseUser user = new ParseUser();

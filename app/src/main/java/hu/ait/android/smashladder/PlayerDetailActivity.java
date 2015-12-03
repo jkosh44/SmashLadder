@@ -13,7 +13,7 @@ import android.view.MenuItem;
 /**
  * An activity representing a single Player detail screen. This
  * activity is only used on handset devices. On tablet-size devices,
- * item details are presented side-by-side with a list of items
+ * item matches are presented side-by-side with a list of items
  * in a {@link PlayerListActivity}.
  * <p/>
  * This activity is mostly just a 'shell' activity containing nothing
@@ -70,7 +70,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
             // This ID represents the Home or Up button. In the case of this
             // activity, the Up button is shown. Use NavUtils to allow users
             // to navigate up one level in the application structure. For
-            // more details, see the Navigation pattern on Android Design:
+            // more matches, see the Navigation pattern on Android Design:
             //
             // http://developer.android.com/design/patterns/navigation.html#up-vs-back
             //

@@ -14,11 +14,11 @@ import android.view.View;
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
  * lead to a {@link PlayerDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
+ * item matches. On tablets, the activity presents the list of items and
+ * item matches side-by-side using two vertical panes.
  * <p/>
  * The activity makes heavy use of fragments. The list of items is a
- * {@link PlayerListFragment} and the item details
+ * {@link PlayerListFragment} and the item matches
  * (if present) is a {@link PlayerDetailFragment}.
  * <p/>
  * This activity also implements the required
@@ -52,7 +52,7 @@ public class PlayerListActivity extends AppCompatActivity
             }
         });
 
-       /* if (findViewById(R.id.player_detail_container) != null) {
+       /* if (findViewById(R.name.player_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and
             // res/values-sw600dp). If this view is present, then the
@@ -62,7 +62,7 @@ public class PlayerListActivity extends AppCompatActivity
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
             ((PlayerListFragment) getSupportFragmentManager()
-                    .findFragmentById(R.id.player_list))
+                    .findFragmentById(R.name.player_list))
                     .setActivateOnItemClick(true);
         }*/
 
@@ -80,11 +80,11 @@ public class PlayerListActivity extends AppCompatActivity
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(PlayerDetailFragment.ARG_ITEM_ID, id);
+            arguments.putString(PlayerDetailFragment.ARG_ITEM_ID, name);
             PlayerDetailFragment fragment = new PlayerDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.player_detail_container, fragment)
+                    .replace(R.name.player_detail_container, fragment)
                     .commit();
 
         } else {*/
