@@ -52,7 +52,7 @@ public class PlayerListActivity extends AppCompatActivity
             }
         });
 
-        if (findViewById(R.id.player_detail_container) != null) {
+       /* if (findViewById(R.id.player_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and
             // res/values-sw600dp). If this view is present, then the
@@ -64,7 +64,7 @@ public class PlayerListActivity extends AppCompatActivity
             ((PlayerListFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.player_list))
                     .setActivateOnItemClick(true);
-        }
+        }*/
 
         // TODO: If exposing deep links into your app, handle intents here.
     }
@@ -75,7 +75,7 @@ public class PlayerListActivity extends AppCompatActivity
      */
     @Override
     public void onItemSelected(String id) {
-        if (mTwoPane) {
+        /*if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
@@ -87,12 +87,12 @@ public class PlayerListActivity extends AppCompatActivity
                     .replace(R.id.player_detail_container, fragment)
                     .commit();
 
-        } else {
+        } else {*/
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, PlayerDetailActivity.class);
             detailIntent.putExtra(PlayerDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
-        }
+        //}
     }
 }
