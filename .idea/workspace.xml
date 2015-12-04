@@ -10,30 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b8f96a5-fd9a-42a6-a961-cc06152ce37f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/player_row.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerDetailFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/dummy/DummyContent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout-w900dp/player_list.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_player_detail.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/player_detail.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/player_list.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/player_list_content.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/adapter/PlayerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/adapter/PlayerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerDetailActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/RegisterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/RegisterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_player_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_player_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmashLadder.iws" />
@@ -55,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayerAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/adapter/PlayerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6354582">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1982#1983#0" expanded="true" />
@@ -99,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerListActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerListActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59766275">
+            <state vertical-scroll-proportion="0.0">
               <caret line="44" column="65" selection-start-line="44" selection-start-column="65" selection-end-line="44" selection-end-column="65" />
               <folding>
                 <element signature="e#1057#1648#0" expanded="true" />
@@ -142,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -1662,13 +1643,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/dummy/DummyContent.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/player_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/adapter/PlayerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/RegisterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_player_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java" />
       </list>
     </option>
   </component>
@@ -1686,8 +1667,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1602" />
+    <option name="x" value="800" />
+    <option name="width" value="801" />
     <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -2095,12 +2076,18 @@
       <option name="project" value="LOCAL" />
       <updated>1449249261962</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="reverted to method from shopping list and city weather">
+      <created>1449265231394</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1449265231394</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1602" height="875" extended-state="6" />
-    <editor active="false" />
+    <frame x="800" y="0" width="801" height="875" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17780939" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2110,7 +2097,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13736264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24466571" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32859176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2119,7 +2106,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14414415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29747677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -2152,7 +2139,8 @@
     <MESSAGE value="should have added email autocomplete based on Parse" />
     <MESSAGE value="commented out tablet handling" />
     <MESSAGE value="Attempting to transfer from DummyItem to PlayerItem, still very buggy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempting to transfer from DummyItem to PlayerItem, still very buggy" />
+    <MESSAGE value="reverted to method from shopping list and city weather" />
+    <option name="LAST_COMMIT_MESSAGE" value="reverted to method from shopping list and city weather" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2296,28 +2284,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/adapter/PlayerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <element signature="e#2027#2028#0" expanded="true" />
-            <element signature="e#2067#2068#0" expanded="true" />
-            <element signature="e#2112#2113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/player_row.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2385,11 +2351,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59766275">
+        <state vertical-scroll-proportion="0.0">
           <caret line="44" column="65" selection-start-line="44" selection-start-column="65" selection-end-line="44" selection-end-column="65" />
           <folding>
             <element signature="e#1057#1648#0" expanded="true" />
             <element signature="e#1647#1648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/PlayerItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/adapter/PlayerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6354582">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1982#1983#0" expanded="true" />
+            <element signature="e#2027#2028#0" expanded="true" />
+            <element signature="e#2067#2068#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
           </folding>
         </state>
       </provider>

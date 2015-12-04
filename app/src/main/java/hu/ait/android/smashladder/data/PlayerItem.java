@@ -17,7 +17,7 @@ public class PlayerItem {
     }
 
     public PlayerItem(ParseUser user) {
-        this.name = "test name";//user.getName();
+        this.name = user.get("NAME_TAG").toString();
         this.rank = 1; //user.getRank();
         this.wins = 1; //user.getWins;
         this.losses = 1; //user.getLosses;
