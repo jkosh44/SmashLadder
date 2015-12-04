@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
         mTagView = (EditText) findViewById(R.id.etTag);
         mPasswordView = (EditText) findViewById(R.id.etRegPassword);
         mProgressView = findViewById(R.id.register_progress);
-        mRegisterFormView = findViewById(R.id.regsiter_form);
+        mRegisterFormView = findViewById(R.id.register_form);
 
         mEmailView.setText(eMial);
 

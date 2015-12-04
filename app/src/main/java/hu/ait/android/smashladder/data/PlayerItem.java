@@ -17,10 +17,10 @@ public class PlayerItem {
     }
 
     public PlayerItem(ParseUser user) {
-        this.name = user.getName();
-        this.rank = user.getRank();
-        this.wins = user.getWins;
-        this.losses = user.getLosses;
+        this.name = "test name";//user.getName();
+        this.rank = 1; //user.getRank();
+        this.wins = 1; //user.getWins;
+        this.losses = 1; //user.getLosses;
     }
 
     public String getName() {

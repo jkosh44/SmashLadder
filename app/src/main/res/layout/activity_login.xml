@@ -12,7 +12,7 @@
 
     <!-- Login progress -->
     <ProgressBar
-        android:name="@+name/login_progress"
+        android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,12 +20,12 @@
         android:visibility="gone" />
 
     <ScrollView
-        android:name="@+name/login_form"
+        android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:name="@+name/email_login_form"
+            android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:name="@+name/email"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
@@ -52,11 +52,10 @@
 
 
                 <EditText
-                    android:name="@+name/password"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+name/login"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
@@ -66,7 +65,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:name="@+name/email_sign_in_button"
+                android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +74,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:name="@+name/email_register_button"
+                android:id="@+id/email_register_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

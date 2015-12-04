@@ -13,7 +13,7 @@
 
     <!-- Login progress -->
     <ProgressBar
-        android:name="@+name/register_progress"
+        android:id="@+id/register_progress"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,12 +21,12 @@
         android:visibility="gone" />
 
     <ScrollView
-        android:name="@+name/regsiter_form"
+        android:id="@+id/register_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:name="@+name/email_register_form"
+            android:id="@+id/email_register_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:name="@+name/etRegEmail"
+                    android:id="@+id/etRegEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:name="@+name/etTag"
+                    android:id="@+id/etTag"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/name_or_tag" />
@@ -64,11 +64,10 @@
 
 
                 <EditText
-                    android:name="@+name/etRegPassword"
+                    android:id="@+id/etRegPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+name/login"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
@@ -78,7 +77,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:name="@+name/btnRegister"
+                android:id="@+id/btnRegister"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +86,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:name="@+name/btnRegCancel"
+                android:id="@+id/btnRegCancel"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
