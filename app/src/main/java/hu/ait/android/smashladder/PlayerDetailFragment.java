@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import hu.ait.android.smashladder.player.PlayerContent;
+import hu.ait.android.smashladder.R;
+import hu.ait.android.smashladder.dummy.DummyContent;
 
+//TODO: get this to work with PlayerItem instead
 /**
  * A fragment representing a single Player detail screen.
  * This fragment is either contained in a {@link PlayerListActivity}
@@ -25,9 +27,10 @@ public class PlayerDetailFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
 
     /**
-     * The dummy rank this fragment is presenting.
+     * The dummy content this fragment is presenting.
      */
-    private PlayerContent.PlayerItem mItem;
+    private DummyContent.DummyItem mItem;
+    //private PlayerItem mItem
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -41,15 +44,15 @@ public class PlayerDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            // Load the dummy rank specified by the fragment
+            // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
-            // to load rank from a rank provider.
-            mItem = PlayerContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            // to load content from a content provider.
+            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.rank);
+                appBarLayout.setTitle(mItem.content);
             }
         }
     }
@@ -57,11 +60,11 @@ public class PlayerDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_player_detail, container, false);
+        View rootView = inflater.inflate(R.layout.player_detail, container, false);
 
-        // Show the dummy rank as text in a TextView.
+        // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.player_detail)).setText(mItem.matches);
+            ((TextView) rootView.findViewById(R.id.player_detail)).setText(mItem.details);
         }
 
         return rootView;

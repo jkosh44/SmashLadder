@@ -1,23 +1,23 @@
 package hu.ait.android.smashladder;
 
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+import hu.ait.android.smashladder.R;
+
 /**
  * An activity representing a single Player detail screen. This
- * activity is only used on handset devices. On tablet-size devices,
- * item matches are presented side-by-side with a list of items
+ * activity is only used narrow width devices. On tablet-size devices,
+ * item details are presented side-by-side with a list of items
  * in a {@link PlayerListActivity}.
- * <p/>
- * This activity is mostly just a 'shell' activity containing nothing
- * more than a {@link PlayerDetailFragment}.
  */
 public class PlayerDetailActivity extends AppCompatActivity {
 
@@ -38,7 +38,10 @@ public class PlayerDetailActivity extends AppCompatActivity {
         });
 
         // Show the Up button in the action bar.
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         // savedInstanceState is non-null when there is fragment state
         // saved from previous configurations of this activity
@@ -70,7 +73,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
             // This ID represents the Home or Up button. In the case of this
             // activity, the Up button is shown. Use NavUtils to allow users
             // to navigate up one level in the application structure. For
-            // more matches, see the Navigation pattern on Android Design:
+            // more details, see the Navigation pattern on Android Design:
             //
             // http://developer.android.com/design/patterns/navigation.html#up-vs-back
             //

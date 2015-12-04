@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hu.ait.android.smashladder">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -34,8 +33,6 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +45,6 @@
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
             android:exported="false">
-
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
                 <action android:name="com.parse.push.intent.DELETE" />
@@ -58,7 +54,6 @@
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
-
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
@@ -68,28 +63,24 @@
             </intent-filter>
         </receiver>
 
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="hu.ait.android.smashladder.PlayerListActivity" />
+
+        <activity android:name=".RegisterActivity" />
         <activity
             android:name=".PlayerListActivity"
             android:label="@string/title_player_list"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".PlayerDetailActivity"
             android:label="@string/title_player_detail"
             android:parentActivityName=".PlayerListActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hu.ait.android.smashladder.PlayerListActivity" />
         </activity>
-
-
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="hu.ait.android.smashladder.PlayerListActivity" />
-
-        <activity android:name=".RegisterActivity"></activity>
-
     </application>
 
 </manifest>
