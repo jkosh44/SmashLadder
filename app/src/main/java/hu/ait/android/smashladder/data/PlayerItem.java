@@ -2,6 +2,10 @@ package hu.ait.android.smashladder.data;
 
 import com.parse.ParseUser;
 
+import java.util.Comparator;
+
+import hu.ait.android.smashladder.RegisterActivity;
+
 /**
  * Created by joe on 12/4/15.
  */
@@ -9,18 +13,18 @@ public class PlayerItem {
 
     private String name;
     private int rank;
-    private int wins;
-    private int losses;
+    //private int wins;
+    //private int losses;
 
     public PlayerItem() {
 
     }
 
     public PlayerItem(ParseUser user) {
-        this.name = user.get("NAME_TAG").toString();
-        this.rank = 1; //user.getRank();
-        this.wins = 1; //user.getWins;
-        this.losses = 1; //user.getLosses;
+        this.name = user.get(RegisterActivity.NAME_TAG).toString();
+        this.rank = 1; user.get(RegisterActivity.RANK_TAG).toString();
+        //this.wins = 1; //user.getWins;
+        //this.losses = 1; //user.getLosses;
     }
 
     public String getName() {
@@ -39,7 +43,9 @@ public class PlayerItem {
         this.rank = rank;
     }
 
-    public int getWins() {
+
+
+    /*public int getWins() {
         return wins;
     }
 
@@ -53,5 +59,5 @@ public class PlayerItem {
 
     public void setLosses(int losses) {
         this.losses = losses;
-    }
+    }*/
 }

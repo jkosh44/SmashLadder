@@ -37,7 +37,7 @@ public class PlayerListActivity extends AppCompatActivity {
             @Override
             public void done(List<ParseUser> objects, ParseException e) {
                 //playerUserList = objects;
-                playerAdapter = new PlayerAdapter(objects);
+                playerAdapter = new PlayerAdapter(objects, context);
 
                 RecyclerView recyclerViewPlayerItem = (RecyclerView) findViewById(R.id.player_recycler_view);
                 recyclerViewPlayerItem.setLayoutManager(new LinearLayoutManager(context));
