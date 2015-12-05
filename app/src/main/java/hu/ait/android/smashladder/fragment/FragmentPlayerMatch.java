@@ -9,6 +9,10 @@ public class FragmentPlayerMatch extends Fragment {
 
     private String playerName;
 
+    public FragmentPlayerMatch() {
+
+    }
+
     public FragmentPlayerMatch(String playerName) {
         this.playerName = playerName;
     }
