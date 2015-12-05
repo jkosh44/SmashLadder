@@ -7,13 +7,21 @@ import android.support.v4.app.Fragment;
  */
 public class FragmentPlayerMatch extends Fragment {
 
-    private String playerName;
+    private String challengerName;
+    private String opponentName;
+    private String winner;
+    private String loser;
+    //private String stage;
+    //private String challengerCharacter;
+    //private String opponentCharacter;
+    //private int stockCount;
+
 
     public FragmentPlayerMatch() {
 
     }
 
-    public FragmentPlayerMatch(String playerName) {
-        this.playerName = playerName;
+    public FragmentPlayerMatch(String challengerName) {
+        this.challengerName = challengerName;
     }
 }
