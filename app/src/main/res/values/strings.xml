@@ -16,4 +16,6 @@
     <string name="title_player_detail">Player Detail</string>
     <string name="name_or_tag">Name or Tag</string>
     <string name="cancel">Cancel</string>
+    <string name="player_details">Player Details</string>
+    <string name="previous_player_matches">Previous Matches</string>
 </resources>
