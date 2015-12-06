@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -41,5 +42,22 @@ public class MatchListActivity extends AppCompatActivity {
                 recyclerViewMatchItem.setVisibility(View.VISIBLE);
             }
         });
+
+        //TODO: change this to something else
+        Button btnTemp = (Button) findViewById(R.id.btnTemp);
+        btnTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addMatch();
+            }
+        });
+    }
+
+    public void addMatch() {
+        final AddMatchDialog dialog = new AddMatchDialog();
+
+        dialog.setCancelable(false);
+
+        dialog.show(getSupportFragmentManager(), AddMatchDialog.TAG);
     }
 }

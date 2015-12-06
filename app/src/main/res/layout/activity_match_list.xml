@@ -17,4 +17,10 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical" />
 
+    <Button
+        android:id="@+id/btnTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temparary Buttons"/>
+
 </LinearLayout>

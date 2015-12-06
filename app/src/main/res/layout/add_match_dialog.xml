@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--TODO: change to spinner-->
+
+    <EditText
+        android:id="@+id/etChallenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/challenger" />
+
+    <EditText
+        android:id="@+id/etOpponent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/opponent" />
+
+    <EditText
+        android:id="@+id/etWinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/winner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAddMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_match" />
+
+        <Button
+            android:id="@+id/btnMatchCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+</LinearLayout>

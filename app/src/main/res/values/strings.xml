@@ -16,6 +16,11 @@
     <string name="title_player_detail">Player Detail</string>
     <string name="name_or_tag">Name or Tag</string>
     <string name="cancel">Cancel</string>
+    <string name="add_match_fragment_interface_error">" must implement AddMatchFragmentInterface"</string>
     <string name="player_details">Player Details</string>
     <string name="previous_player_matches">Previous Matches</string>
+    <string name="challenger">Challenger</string>
+    <string name="opponent">Opponent</string>
+    <string name="winner">Winner</string>
+    <string name="add_match">Add Match</string>
 </resources>
