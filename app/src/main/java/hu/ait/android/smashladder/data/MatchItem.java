@@ -23,6 +23,7 @@ public class MatchItem {
         this.loser = loser;
     }*/
 
+    //TODO: fix this
     public MatchItem(ParseObject match) {
         this.challengerName = "temp";//match.get(challengerName);
         this.opponentName = "temp";//match.get(opponentName);

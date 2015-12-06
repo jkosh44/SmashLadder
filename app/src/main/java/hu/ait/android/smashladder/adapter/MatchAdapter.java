@@ -13,19 +13,17 @@ import android.widget.TextView;
 import com.parse.ParseObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import hu.ait.android.smashladder.PlayerDetailActivity;
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.data.MatchItem;
-import hu.ait.android.smashladder.data.PlayerComparator;
 import hu.ait.android.smashladder.data.PlayerItem;
 
 /**
  * Created by joe on 12/6/15.
  */
-public class MatchAdapter {
+public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -45,15 +43,15 @@ public class MatchAdapter {
     private Context context;
 
 
-    public PlayerAdapter(List<ParseObject> matches, Context context) {
+    public MatchAdapter(List<ParseObject> matches, Context context) {
         this.context = context;
 
-        List<PlayerItem> resValues = new ArrayList<>();
+        List<MatchItem> resValues = new ArrayList<>();
         for (int i = 0; i < matches.size(); i++) {
             resValues.add(new MatchItem(matches.get(i)));
         }
 
-        Collections.sort(resValues, new PlayerComparator());
+        //Collections.sort(resValues, new PlayerComparator());
 
         matchItemList = resValues;
     }
@@ -62,7 +60,7 @@ public class MatchAdapter {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.player_row, viewGroup, false);
+                .inflate(R.layout.match_row, viewGroup, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
@@ -70,19 +68,19 @@ public class MatchAdapter {
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         //TODO: add more stuff
-        holder.tvMatch.setText(matchItemList.get(position).getName());
+        holder.tvMatch.setText(matchItemList.get(position).getChallengerName());
 
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle playerBundle = new Bundle();
-                playerBundle.putString(BUNDLE_NAME_KEY, matchItemList.get(position).getName());
-                playerBundle.putInt(BUNDLE_RANK_KEY, matchItemList.get(position).getRank());
+                /*Bundle matchBundle = new Bundle();
+                matchBundle.putString(BUNDLE_NAME_KEY, matchItemList.get(position).getName());
+                matchBundle.putInt(BUNDLE_RANK_KEY, matchItemList.get(position).getRank());
 
                 Intent intent = new Intent(context, PlayerDetailActivity.class);
-                intent.putExtras(playerBundle);
+                intent.putExtras(matchBundle);
 
-                context.startActivity(intent);
+                context.startActivity(intent);*/
 
             }
         });
@@ -93,7 +91,7 @@ public class MatchAdapter {
         return matchItemList.size();
     }
 
-    public PlayerItem getItem(int i) {
+    public MatchItem getItem(int i) {
         return matchItemList.get(i);
     }
 

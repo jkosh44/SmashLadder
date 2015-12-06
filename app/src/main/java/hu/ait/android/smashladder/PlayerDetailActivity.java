@@ -8,7 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.List;
+
 import hu.ait.android.smashladder.adapter.PlayerAdapter;
+import hu.ait.android.smashladder.data.MatchItem;
 import hu.ait.android.smashladder.fragment.FragmentPlayerDetail;
 import hu.ait.android.smashladder.fragment.FragmentPlayerMatch;
 
@@ -18,6 +21,8 @@ public class PlayerDetailActivity extends AppCompatActivity {
 
     private String playerName;
     private int playerRank;
+    //TODO: get all matches such that either the challenger or opponent is playerName and create MatchItems out of them to fill up playerMatches
+    private List<MatchItem> playerMatches;
 
     private ViewPager playerDetailsContainer;
 
@@ -51,7 +56,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
                 case 0:
                     return new FragmentPlayerDetail(playerName, playerRank);
                 case 1:
-                    return new FragmentPlayerMatch(playerName);
+                    return new FragmentPlayerMatch(playerMatches);
                 default:
                     return new FragmentPlayerDetail(playerName, playerRank);
             }
