@@ -16,4 +16,10 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
+    <Button
+        android:id="@+id/btnPlayerTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temp"/>
+
 </RelativeLayout>

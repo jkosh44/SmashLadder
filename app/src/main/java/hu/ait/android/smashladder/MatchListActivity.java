@@ -28,8 +28,8 @@ public class MatchListActivity extends AppCompatActivity {
 
         final Context context = this;
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Matches");
-        //TODO: make sure the queries are all matches
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery("Matches");
+        //TODO: make sure the queries are all matches, uncomment when you add matches to parse
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
@@ -41,7 +41,7 @@ public class MatchListActivity extends AppCompatActivity {
                 recyclerViewMatchItem.setAdapter(matchAdapter);
                 recyclerViewMatchItem.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
 
         //TODO: change this to something else
         Button btnTemp = (Button) findViewById(R.id.btnTemp);
