@@ -1,5 +1,7 @@
 package hu.ait.android.smashladder.data;
 
+import com.parse.ParseObject;
+
 /**
  * Created by joe on 12/5/15.
  */
@@ -14,11 +16,18 @@ public class MatchItem {
     //private String opponentCharacter;
     //private int stockCount;
 
-    public MatchItem(String challengerName, String opponentName, String winner, String loser) {
+    /*public MatchItem(String challengerName, String opponentName, String winner, String loser) {
         this.challengerName = challengerName;
         this.opponentName = opponentName;
         this.winner = winner;
         this.loser = loser;
+    }*/
+
+    public MatchItem(ParseObject match) {
+        this.challengerName = "temp";//match.get(challengerName);
+        this.opponentName = "temp";//match.get(opponentName);
+        this.winner = "temp";//match.get(winner);
+        this.loser = "temp";//match.get(loser);
     }
 
     public String getChallengerName() {

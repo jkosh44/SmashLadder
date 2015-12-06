@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
  */
 public class FragmentPlayerMatch extends Fragment {
 
+    //TODO: deal with the case that there
+
     private String challengerName;
     private String opponentName;
     private String winner;

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.parse.ParseUser;
+import com.parse.ParseObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,49 +18,44 @@ import java.util.List;
 
 import hu.ait.android.smashladder.PlayerDetailActivity;
 import hu.ait.android.smashladder.R;
+import hu.ait.android.smashladder.data.MatchItem;
 import hu.ait.android.smashladder.data.PlayerComparator;
 import hu.ait.android.smashladder.data.PlayerItem;
 
-
 /**
- * Created by joe on 12/4/15.
+ * Created by joe on 12/6/15.
  */
-public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder> {
-
-    public static final String PLAYER_ITEM_KEY = "PLAYER_ITEM_KEY";
-    public static final String BUNDLE_RANK_KEY = "BUNDLE_RANK_KEY";
-    public static final String BUNDLE_NAME_KEY = "BUNDLE_NAME_KEY";
-    private Intent detailsIntent;
+public class MatchAdapter {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         //TODO: add more views
-        public TextView tvPlayer;
-        public LinearLayout playerItemView;
+        public TextView tvMatch;
+        public LinearLayout matchItemView;
 
         public ViewHolder(View view) {
             super(view);
-            tvPlayer = (TextView) view.findViewById(R.id.tvPlayer);
-            playerItemView = (LinearLayout) view.findViewById(R.id.playerItemView);
+            tvMatch = (TextView) view.findViewById(R.id.tvPlayer);
+            matchItemView = (LinearLayout) view.findViewById(R.id.playerItemView);
         }
 
     }
 
-    private List<PlayerItem> playerItemsList;
+    private List<MatchItem> matchItemList;
     private Context context;
 
 
-    public PlayerAdapter(List<ParseUser> users, Context context) {
+    public PlayerAdapter(List<ParseObject> matches, Context context) {
         this.context = context;
 
         List<PlayerItem> resValues = new ArrayList<>();
-        for (int i = 0; i < users.size(); i++) {
-            resValues.add(new PlayerItem(users.get(i)));
+        for (int i = 0; i < matches.size(); i++) {
+            resValues.add(new MatchItem(matches.get(i)));
         }
 
         Collections.sort(resValues, new PlayerComparator());
 
-        playerItemsList = resValues;
+        matchItemList = resValues;
     }
 
 
@@ -75,14 +70,14 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         //TODO: add more stuff
-        holder.tvPlayer.setText(playerItemsList.get(position).getName());
+        holder.tvMatch.setText(matchItemList.get(position).getName());
 
-        holder.playerItemView.setOnClickListener(new View.OnClickListener() {
+        holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle playerBundle = new Bundle();
-                playerBundle.putString(BUNDLE_NAME_KEY, playerItemsList.get(position).getName());
-                playerBundle.putInt(BUNDLE_RANK_KEY, playerItemsList.get(position).getRank());
+                playerBundle.putString(BUNDLE_NAME_KEY, matchItemList.get(position).getName());
+                playerBundle.putInt(BUNDLE_RANK_KEY, matchItemList.get(position).getRank());
 
                 Intent intent = new Intent(context, PlayerDetailActivity.class);
                 intent.putExtras(playerBundle);
@@ -95,14 +90,11 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return playerItemsList.size();
+        return matchItemList.size();
     }
 
     public PlayerItem getItem(int i) {
-        return playerItemsList.get(i);
+        return matchItemList.get(i);
     }
 
 }
-
-
-
