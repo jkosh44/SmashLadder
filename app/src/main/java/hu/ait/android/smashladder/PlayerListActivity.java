@@ -1,12 +1,10 @@
 package hu.ait.android.smashladder;
 
 import android.content.Context;
-import android.support.design.widget.NavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.parse.FindCallback;
@@ -17,9 +15,9 @@ import com.parse.ParseUser;
 import java.util.List;
 
 import hu.ait.android.smashladder.adapter.PlayerAdapter;
-import hu.ait.android.smashladder.data.PlayerItem;
 
 public class PlayerListActivity extends AppCompatActivity {
+    //TODO: add way to get to MatchListActivity
 
     private PlayerAdapter playerAdapter;
 
@@ -27,8 +25,6 @@ public class PlayerListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_list);
-
-        //List<ParseUser> playerUserList;
 
         final Context context = this;
 
@@ -45,14 +41,5 @@ public class PlayerListActivity extends AppCompatActivity {
                 recyclerViewPlayerItem.setVisibility(View.VISIBLE);
             }
         });
-
-        /*playerAdapter = new PlayerAdapter(playerUserList);
-
-        RecyclerView recyclerViewPlayerItem = (RecyclerView) findViewById(R.id.player_recycler_view);
-        recyclerViewPlayerItem.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewPlayerItem.setAdapter(playerAdapter);*/
-
-
     }
-
 }

@@ -69,7 +69,8 @@
 
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PlayerListActivity" />
-        <activity android:name=".PlayerDetailActivity"></activity>
+        <activity android:name=".PlayerDetailActivity" />
+        <activity android:name=".MatchListActivity"></activity>
     </application>
 
 </manifest>

@@ -73,6 +73,7 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO: start match details dialog/activity
                 /*Bundle matchBundle = new Bundle();
                 matchBundle.putString(BUNDLE_NAME_KEY, matchItemList.get(position).getName());
                 matchBundle.putInt(BUNDLE_RANK_KEY, matchItemList.get(position).getRank());
