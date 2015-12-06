@@ -2,6 +2,8 @@ package hu.ait.android.smashladder.data;
 
 import com.parse.ParseObject;
 
+import hu.ait.android.smashladder.AddMatchDialog;
+
 /**
  * Created by joe on 12/5/15.
  */
@@ -16,19 +18,13 @@ public class MatchItem {
     //private String opponentCharacter;
     //private int stockCount;
 
-    /*public MatchItem(String challengerName, String opponentName, String winner, String loser) {
-        this.challengerName = challengerName;
-        this.opponentName = opponentName;
-        this.winner = winner;
-        this.loser = loser;
-    }*/
 
-    //TODO: fix this
+    //TODO: add to this, also make sure it's a match object?
     public MatchItem(ParseObject match) {
-        this.challengerName = "temp";//match.get(challengerName);
-        this.opponentName = "temp";//match.get(opponentName);
-        this.winner = "temp";//match.get(winner);
-        this.loser = "temp";//match.get(loser);
+        this.challengerName = match.get(AddMatchDialog.KEY_CHALLENGER).toString();
+        this.opponentName = match.get(AddMatchDialog.KEY_OPPONENT).toString();
+        this.winner = match.get(AddMatchDialog.KEY_WINNER).toString();
+        //this.loser = match.get(loser);
     }
 
     public String getChallengerName() {

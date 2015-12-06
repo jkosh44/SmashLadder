@@ -17,6 +17,8 @@ import hu.ait.android.smashladder.fragment.FragmentPlayerMatch;
 
 public class PlayerDetailActivity extends AppCompatActivity {
 
+    //TODO: we can send push notifications with ParsePush, may want to add a challenge feature
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private String playerName;

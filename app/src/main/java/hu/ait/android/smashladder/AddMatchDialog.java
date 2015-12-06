@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.ParseObject;
+
 import hu.ait.android.smashladder.data.MatchItem;
 
 /**
@@ -18,6 +20,10 @@ import hu.ait.android.smashladder.data.MatchItem;
 public class AddMatchDialog extends DialogFragment {
 
     public static final String TAG = "DialogFragment";
+    public static final String MATCH_TAG = "MATCH_TAG";
+    public static final String KEY_CHALLENGER = "KEY_CHALLENGER";
+    public static final String KEY_OPPONENT = "KEY_OPPONENT";
+    public static final String KEY_WINNER = "KEY_WINNER";
 
     public interface AddMatchFragmentInterface {
         public void onAddMatchFragmentResult(MatchItem match);
@@ -48,15 +54,25 @@ public class AddMatchDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.add_match_dialog, container, false);
 
-        EditText etChallenger = (EditText) v.findViewById(R.id.etChallenger);
-        EditText etOpponent = (EditText) v.findViewById(R.id.etOpponent);
-        EditText etWinner = (EditText) v.findViewById(R.id.etWinner);
+        final EditText etChallenger = (EditText) v.findViewById(R.id.etChallenger);
+        final EditText etOpponent = (EditText) v.findViewById(R.id.etOpponent);
+        final EditText etWinner = (EditText) v.findViewById(R.id.etWinner);
 
         Button btnAddMatch = (Button) v.findViewById(R.id.btnAddMatch);
         btnAddMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: add match to parse
+                //TODO: add other fields possibly
+                ParseObject newMatchParse = new ParseObject(MATCH_TAG);
+                //TODO: do we want to only allow the challenger to add matches of themselvs?
+                //      we could change key_challenger to ParseUser.getCurrentUser()
+                newMatchParse.put(KEY_CHALLENGER, etChallenger.getText().toString());
+                newMatchParse.put(KEY_OPPONENT, etOpponent.getText().toString());
+                newMatchParse.put(KEY_WINNER, etWinner.getText().toString());
+                newMatchParse.saveInBackground();
+
+                newMatch = new MatchItem(newMatchParse);
+                addMatchFragmentInterface.onAddMatchFragmentResult(newMatch);
                 dismiss();
             }
         });
