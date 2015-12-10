@@ -39,7 +39,7 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
         final Context context = this;
 
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(MATCHES_TAG);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(MATCHES_TAG);
         //TODO: make sure the queries are all matches, uncomment when you add matches to parse
         //TODO: why does this crash?
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -53,7 +53,7 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
                 recyclerViewMatchItem.setAdapter(matchAdapter);
                 recyclerViewMatchItem.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
 
         //TODO: change this to something else
         Button btnTemp = (Button) findViewById(R.id.btnTemp);
