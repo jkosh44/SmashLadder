@@ -9,17 +9,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="hu.ait.android.smashladder.PlayerListActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/matchListToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0000ff"
+        android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/player_recycler_view"
         android:layout_width="match_parent"
-        android:visibility="gone"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
-
-    <Button
-        android:id="@+id/btnPlayerTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Temp"/>
+        android:scrollbars="vertical"
+        android:visibility="gone" />
 
 </RelativeLayout>

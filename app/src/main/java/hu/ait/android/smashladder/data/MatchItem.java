@@ -2,7 +2,7 @@ package hu.ait.android.smashladder.data;
 
 import com.parse.ParseObject;
 
-import hu.ait.android.smashladder.AddMatchDialog;
+import hu.ait.android.smashladder.MatchListActivity;
 
 /**
  * Created by joe on 12/5/15.
@@ -21,9 +21,9 @@ public class MatchItem {
 
     //TODO: add to this, also make sure it's a match object?
     public MatchItem(ParseObject match) {
-        this.challengerName = match.get(AddMatchDialog.KEY_CHALLENGER).toString();
-        this.opponentName = match.get(AddMatchDialog.KEY_OPPONENT).toString();
-        this.winner = match.get(AddMatchDialog.KEY_WINNER).toString();
+        this.challengerName = match.get(MatchListActivity.MATCH_CHALLENGER_KEY).toString();
+        this.opponentName = match.get(MatchListActivity.MATCH_OPPONENT_KEY).toString();
+        this.winner = match.get(MatchListActivity.MATCH_WINNER_KEY).toString();
         //this.loser = match.get(loser);
     }
 

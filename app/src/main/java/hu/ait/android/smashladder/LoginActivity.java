@@ -46,6 +46,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 //TODO: !!!!! NOTE: Change autocomplete from reading your contacts to getting all users from Parse!!!!!
 //I think i did...?
 
+//TODO: deal with not having wifi when trying to log in/ keep users logged in until log out?
 /**
  * A login screen that offers login via email/password.
  */
