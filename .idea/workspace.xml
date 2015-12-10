@@ -156,8 +156,13 @@
       <file leaf-file-name="login_extra_layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login_extra_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.62974685">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+=======
             <state vertical-scroll-proportion="-3.6206896">
               <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+>>>>>>> c6866bec6ed93830287e4890f6698d9d6c924286
               <folding>
                 <element signature="e#887#909#0" expanded="true" />
                 <element signature="e#1411#1436#0" expanded="true" />
@@ -2035,6 +2040,70 @@
       <option name="number" value="Default" />
       <updated>1449697984479</updated>
     </task>
+<<<<<<< HEAD
+    <task id="LOCAL-00011" summary="Sorted Players by rank. Added Detail Activity and display name and rank">
+      <created>1449343495501</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1449343495501</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed Player Details to fragments. Added beginning of match items.">
+      <created>1449346990549</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1449346990549</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added default constructer to FragmentPlayerMatches">
+      <created>1449347217297</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1449347217297</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Finished MatchItem">
+      <created>1449347478720</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1449347478720</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added MatchAdapter. Changed MatchItem constructor to take ParseObjects. Changed name of player match fragment xml file">
+      <created>1449408536163</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1449408536163</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Removed Errors from MatchAdapter. Changed the constructor of MatchItem to take a ParseObject. Changed the constructor for FragmentPlayerMatch to take a list of matches.">
+      <created>1449409509240</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1449409509240</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added MatchListActivity">
+      <created>1449411987974</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1449411987974</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added AddMatchDialog and added a temporary button to get to it">
+      <created>1449430604409</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1449430604409</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added temporary button to get to MatchListActivity. Add match dialog crashed the app.">
+      <created>1449431383403</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1449431383403</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Saves matches to parse in AddMatchDialog, fixed MatchItem constructor">
+      <created>1449438565026</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1449438565026</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+=======
+>>>>>>> c6866bec6ed93830287e4890f6698d9d6c924286
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2074,6 +2143,31 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed bugs in manifest" />
+    <MESSAGE value="fixed conflicts" />
+    <MESSAGE value="added rank to register process" />
+    <MESSAGE value="should have added email autocomplete based on Parse" />
+    <MESSAGE value="commented out tablet handling" />
+    <MESSAGE value="Attempting to transfer from DummyItem to PlayerItem, still very buggy" />
+    <MESSAGE value="reverted to method from shopping list and city weather" />
+    <MESSAGE value="displays all users from Parse in the PlayerListActivity" />
+    <MESSAGE value="changed PlayerDetailActivity to an actual activity" />
+    <MESSAGE value="Sorted Players by rank. Added Detail Activity and display name and rank" />
+    <MESSAGE value="Changed Player Details to fragments. Added beginning of match items." />
+    <MESSAGE value="Added default constructer to FragmentPlayerMatches" />
+    <MESSAGE value="Finished MatchItem" />
+    <MESSAGE value="Added MatchAdapter. Changed MatchItem constructor to take ParseObjects. Changed name of player match fragment xml file" />
+    <MESSAGE value="Removed Errors from MatchAdapter. Changed the constructor of MatchItem to take a ParseObject. Changed the constructor for FragmentPlayerMatch to take a list of matches." />
+    <MESSAGE value="Added MatchListActivity" />
+    <MESSAGE value="Added AddMatchDialog and added a temporary button to get to it" />
+    <MESSAGE value="Added temporary button to get to MatchListActivity. Add match dialog crashed the app." />
+    <MESSAGE value="Saves matches to parse in AddMatchDialog, fixed MatchItem constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saves matches to parse in AddMatchDialog, fixed MatchItem constructor" />
+  </component>
+=======
+>>>>>>> c6866bec6ed93830287e4890f6698d9d6c924286
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -2201,5 +2295,44 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/PlayerDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/MatchListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/AddMatchDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hu/ait/android/smashladder/data/MatchItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62974685">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> c6866bec6ed93830287e4890f6698d9d6c924286
   </component>
 </project>

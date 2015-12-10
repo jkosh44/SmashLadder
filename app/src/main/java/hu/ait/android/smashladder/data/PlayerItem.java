@@ -22,7 +22,7 @@ public class PlayerItem {
 
     public PlayerItem(ParseUser user) {
         this.name = user.get(RegisterActivity.NAME_TAG).toString();
-        this.rank = 1; user.get(RegisterActivity.RANK_TAG).toString();
+        this.rank = (int) user.get(RegisterActivity.RANK_TAG);
         //this.wins = 1; //user.getWins;
         //this.losses = 1; //user.getLosses;
     }

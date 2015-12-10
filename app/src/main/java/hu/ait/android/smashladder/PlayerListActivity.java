@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -28,6 +32,9 @@ public class PlayerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_list);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.matchListToolbar);
+        setSupportActionBar(toolbar);
+
         final Context context = this;
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
@@ -43,15 +50,24 @@ public class PlayerListActivity extends AppCompatActivity {
                 recyclerViewPlayerItem.setVisibility(View.VISIBLE);
             }
         });
+    }
 
-        Button btnPlayerTemp = (Button) findViewById(R.id.btnPlayerTemp);
-        btnPlayerTemp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.player_list_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_start_match_list:
                 Intent matchListIntent = new Intent(PlayerListActivity.this, MatchListActivity.class);
                 startActivity(matchListIntent);
-            }
-        });
-
+                return true;
+            default:
+                return true;
+        }
     }
 }
