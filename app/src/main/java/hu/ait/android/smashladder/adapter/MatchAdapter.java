@@ -1,8 +1,6 @@
 package hu.ait.android.smashladder.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +13,9 @@ import com.parse.ParseObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import hu.ait.android.smashladder.PlayerDetailActivity;
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.data.MatchItem;
-import hu.ait.android.smashladder.data.PlayerItem;
+import hu.ait.android.smashladder.fragment.MatchDetailsDialog;
 
 /**
  * Created by joe on 12/6/15.
@@ -73,16 +70,9 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: start match details dialog/activity
-                /*Bundle matchBundle = new Bundle();
-                matchBundle.putString(BUNDLE_NAME_KEY, matchItemList.get(position).getName());
-                matchBundle.putInt(BUNDLE_RANK_KEY, matchItemList.get(position).getRank());
-
-                Intent intent = new Intent(context, PlayerDetailActivity.class);
-                intent.putExtras(matchBundle);
-
-                context.startActivity(intent);*/
-
+               /* //TODO: start matchdetails dialog, make sure to bundle the match item
+                final MatchDetailsDialog dialog = new MatchDetailsDialog();
+                dialog.show(context.getSupportFragmentManager(), MatchDetailsDialog.TAG); */
             }
         });
     }

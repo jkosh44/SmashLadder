@@ -3,22 +3,13 @@ package hu.ait.android.smashladder;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.support.v7.widget.Toolbar;
-
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-
-import java.util.List;
 
 import hu.ait.android.smashladder.adapter.MatchAdapter;
 import hu.ait.android.smashladder.data.MatchItem;
 import hu.ait.android.smashladder.fragment.AddMatchDialog;
+import hu.ait.android.smashladder.fragment.MatchDetailsDialog;
 
 public class MatchListActivity extends AppCompatActivity implements AddMatchDialog.AddMatchFragmentInterface {
 
@@ -72,6 +63,13 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
 
         dialog.show(getSupportFragmentManager(), AddMatchDialog.TAG);
     }
+
+    /*//TODO start matchdetails dialog, make sure to bundle matchItem. should this be implemented here?
+    public void startMatchDetails() {
+        final MatchDetailsDialog dialog = new MatchDetailsDialog();
+        //TODO: fix
+        dialog.show(getSupportFragmentManager(), MatchDetailsDialog.TAG);
+    }*/
 
 
 

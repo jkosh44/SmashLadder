@@ -21,7 +21,7 @@ import hu.ait.android.smashladder.data.MatchItem;
  */
 public class AddMatchDialog extends DialogFragment {
 
-    public static final String TAG = "DialogFragment";
+    public static final String TAG = "AddMatchDialogFragment";
 
     public interface AddMatchFragmentInterface {
         public void onAddMatchFragmentResult(MatchItem match);
@@ -70,6 +70,7 @@ public class AddMatchDialog extends DialogFragment {
                 newMatchParse.saveInBackground();
 
                 newMatch = new MatchItem(newMatchParse);
+                //TODO: this also crashes the app
                 addMatchFragmentInterface.onAddMatchFragmentResult(newMatch);
                 dismiss();
             }
