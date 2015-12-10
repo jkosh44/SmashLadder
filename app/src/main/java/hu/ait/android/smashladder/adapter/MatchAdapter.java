@@ -96,4 +96,9 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
         return matchItemList.get(i);
     }
 
+    public void addMatchItem(MatchItem item) {
+        //TODO: add to Parse also
+        matchItemList.add(item);
+    }
+
 }

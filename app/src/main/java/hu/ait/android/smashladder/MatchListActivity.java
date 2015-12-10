@@ -16,9 +16,11 @@ import com.parse.ParseQuery;
 import java.util.List;
 
 import hu.ait.android.smashladder.adapter.MatchAdapter;
+import hu.ait.android.smashladder.data.MatchItem;
 
-public class MatchListActivity extends AppCompatActivity {
+public class MatchListActivity extends AppCompatActivity implements AddMatchDialog.AddMatchFragmentInterface {
 
+    //TODO: initialize adapter
     private MatchAdapter matchAdapter;
 
     @Override
@@ -60,4 +62,13 @@ public class MatchListActivity extends AppCompatActivity {
 
         dialog.show(getSupportFragmentManager(), AddMatchDialog.TAG);
     }
+
+
+
+    @Override
+    public void onAddMatchFragmentResult(MatchItem match) {
+        matchAdapter.addMatchItem(match);
+    }
+
+
 }
