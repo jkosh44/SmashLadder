@@ -62,7 +62,7 @@ public class AddMatchDialog extends DialogFragment {
             public void onClick(View v) {
                 //TODO: add other fields possibly
                 ParseObject newMatchParse = new ParseObject(MatchListActivity.MATCHES_TAG);
-                //TODO: do we want to only allow the challenger to add matches of themselvs?
+                //TODO: do we want to only allow the challenger to add matches of themselves?
                 //      we could change key_challenger to ParseUser.getCurrentUser()
                 newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_KEY, etChallenger.getText().toString());
                 newMatchParse.put(MatchListActivity.MATCH_OPPONENT_KEY, etOpponent.getText().toString());
