@@ -70,7 +70,7 @@ public class AddMatchDialog extends DialogFragment {
                 newMatchParse.saveInBackground();
 
                 newMatch = new MatchItem(newMatchParse);
-                //TODO: this also crashes the app
+                //TODO: this also crashes the app, it works without this line
                 addMatchFragmentInterface.onAddMatchFragmentResult(newMatch);
                 dismiss();
             }
