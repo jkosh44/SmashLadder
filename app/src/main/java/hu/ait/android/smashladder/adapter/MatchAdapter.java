@@ -30,8 +30,8 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
 
         public ViewHolder(View view) {
             super(view);
-            tvMatch = (TextView) view.findViewById(R.id.tvPlayer);
-            matchItemView = (LinearLayout) view.findViewById(R.id.playerItemView);
+            tvMatch = (TextView) view.findViewById(R.id.tvMatch);
+            matchItemView = (LinearLayout) view.findViewById(R.id.matchItemView);
         }
 
     }
@@ -65,7 +65,7 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         //TODO: add more stuff
-        holder.tvMatch.setText(matchItemList.get(position).getChallengerName());
+        holder.tvMatch.setText(matchItemList.get(position).getChallengerName() + " vs. " + matchItemList.get(position).getOpponentName());
 
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,10 +3,20 @@ package hu.ait.android.smashladder;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
 
 import hu.ait.android.smashladder.adapter.MatchAdapter;
 import hu.ait.android.smashladder.data.MatchItem;
@@ -32,21 +42,24 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
         final Context context = this;
 
 
-        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(MATCHES_TAG);
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(MATCHES_TAG);
         //TODO: make sure the queries are all matches, uncomment when you add matches to parse
         //TODO: why does this crash?
         query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
             public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
 
-                matchAdapter = new MatchAdapter(objects, context);
+                    matchAdapter = new MatchAdapter(objects, context);
 
-                RecyclerView recyclerViewMatchItem = (RecyclerView) findViewById(R.id.player_recycler_view);
-                recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(context));
-                recyclerViewMatchItem.setAdapter(matchAdapter);
-                recyclerViewMatchItem.setVisibility(View.VISIBLE);
+                    RecyclerView recyclerViewMatchItem = (RecyclerView) findViewById(R.id.match_recycler_view);
+                    recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(context));
+                    recyclerViewMatchItem.setAdapter(matchAdapter);
+                    recyclerViewMatchItem.setVisibility(View.VISIBLE);
+                } else {
+                    e.printStackTrace();
+                }
             }
-        });*/
+        });
     }
 
     @Override
