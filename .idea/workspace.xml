@@ -100,13 +100,10 @@
       <file leaf-file-name="login_extra_layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login_extra_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
             <state vertical-scroll-proportion="0.62974685">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-=======
-            <state vertical-scroll-proportion="-3.6206896">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
->>>>>>> c6866bec6ed93830287e4890f6698d9d6c924286
+
               <folding>
                 <element signature="e#887#909#0" expanded="true" />
                 <element signature="e#1411#1436#0" expanded="true" />

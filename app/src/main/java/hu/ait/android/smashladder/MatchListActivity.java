@@ -1,15 +1,16 @@
 package hu.ait.android.smashladder;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import hu.ait.android.smashladder.adapter.MatchAdapter;
 import hu.ait.android.smashladder.data.MatchItem;
 import hu.ait.android.smashladder.fragment.AddMatchDialog;
-import hu.ait.android.smashladder.fragment.MatchDetailsDialog;
 
 public class MatchListActivity extends AppCompatActivity implements AddMatchDialog.AddMatchFragmentInterface {
 
@@ -25,7 +26,8 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_list);
 
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.playerListToolbar);
+        setSupportActionBar(toolbar);
 
         final Context context = this;
 
@@ -45,15 +47,24 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
                 recyclerViewMatchItem.setVisibility(View.VISIBLE);
             }
         });*/
+    }
 
-        //TODO: change this to something else
-        Button btnTemp = (Button) findViewById(R.id.btnTemp);
-        btnTemp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.match_list_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add_match:
                 addMatch();
-            }
-        });
+                return true;
+            default:
+                return true;
+        }
     }
 
     public void addMatch() {
@@ -70,7 +81,6 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
         //TODO: fix
         dialog.show(getSupportFragmentManager(), MatchDetailsDialog.TAG);
     }*/
-
 
 
     @Override
