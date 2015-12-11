@@ -89,6 +89,7 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
     public void addMatchItem(MatchItem item) {
         //TODO: add to Parse also
         matchItemList.add(item);
+        notifyDataSetChanged();
     }
 
 }
