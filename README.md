@@ -1,4 +1,4 @@
 # SmashLadder
-Final Mobile App
+Final Mobile App (unfinished)
 
-A Final Project of AIT Mobile Software Development Class
+A leader board for WeSmash, The Wesleyan Super Smash Bros. Club.
