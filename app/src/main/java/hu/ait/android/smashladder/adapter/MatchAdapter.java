@@ -81,8 +81,10 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: give the dialog the match item somehow
-                MatchDetailsDialog dialog = MatchDetailsDialog.newInstance(matchItemList.get(position).getChallengerName(), matchItemList.get(position).getOpponentName(),matchItemList.get(position).getWinner());
+                MatchDetailsDialog dialog = MatchDetailsDialog.newInstance(
+                        matchItemList.get(position).getChallengerName(), matchItemList.get(position).getChallengerCharacter(),
+                        matchItemList.get(position).getOpponentName(), matchItemList.get(position).getOpponentCharacter(),
+                        matchItemList.get(position).getStage(), matchItemList.get(position).getWinner());
                 dialog.show(fm, MatchDetailsDialog.TAG);
             }
         });

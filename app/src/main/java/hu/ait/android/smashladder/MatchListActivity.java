@@ -24,10 +24,15 @@ import hu.ait.android.smashladder.fragment.AddMatchDialog;
 
 public class MatchListActivity extends AppCompatActivity implements AddMatchDialog.AddMatchFragmentInterface {
 
+    //TODO: should these be moved to AddMatchDialog?
     public static final String MATCHES_TAG = "Matches";
     public static final String MATCH_CHALLENGER_KEY = "MATCH_CHALLENGER_KEY";
     public static final String MATCH_OPPONENT_KEY = "MATCH_OPPONENT_KEY";
     public static final String MATCH_WINNER_KEY = "MATCH_WINNER_KEY";
+    public static final String MATCH_CHALLENGER_CHARACHTER_KEY = "MATCH_CHALLENGER_CHARACTER_KEY";
+    public static final String MATCH_OPPONENT_CHARACTER_KEY = "MATCH_OPPONENT_CHARACTER_KEY";
+    public static final String MATCH_STAGE_KEY = "MATCH_STAGE_KEY";
+
     //TODO: initialize adapter
     private MatchAdapter matchAdapter;
 

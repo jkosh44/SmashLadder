@@ -43,8 +43,12 @@ public class AddMatchDialog extends DialogFragment {
     private ArrayList<String> players = new ArrayList<String>();
 
     Spinner spinnerChallenger;
+    Spinner spinnerChallengerCharacter;
     Spinner spinnerOpponent;
+    Spinner spinnerOpponentCharacter;
+    Spinner spinnerStage;
     Spinner spinnerWinner;
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -68,7 +72,10 @@ public class AddMatchDialog extends DialogFragment {
         View v = inflater.inflate(R.layout.add_match_dialog, container, false);
 
         spinnerChallenger = (Spinner) v.findViewById(R.id.spinnerChallenger);
+        spinnerChallengerCharacter = (Spinner) v.findViewById(R.id.spinnerChallengerCharacter);
         spinnerOpponent = (Spinner) v.findViewById(R.id.spinnerOpponent);
+        spinnerOpponentCharacter = (Spinner) v.findViewById(R.id.spinnerOpponentCharacter);
+        spinnerStage = (Spinner) v.findViewById(R.id.spinnerStage);
         spinnerWinner = (Spinner) v.findViewById(R.id.spinnerWinner);
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
@@ -91,6 +98,16 @@ public class AddMatchDialog extends DialogFragment {
             }
         });
 
+        ArrayAdapter<CharSequence> characterAdapter = ArrayAdapter.createFromResource(getContext(), R.array.characters, android.R.layout.simple_spinner_item);
+        characterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        ArrayAdapter<CharSequence> stageAdapter = ArrayAdapter.createFromResource(getContext(), R.array.stages, android.R.layout.simple_spinner_item);
+        characterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerChallengerCharacter.setAdapter(characterAdapter);
+        spinnerOpponentCharacter.setAdapter(characterAdapter);
+        spinnerStage.setAdapter(stageAdapter);
+
 
         Button btnAddMatch = (Button) v.findViewById(R.id.btnAddMatch);
         btnAddMatch.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +121,9 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_KEY, spinnerChallenger.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_KEY, spinnerOpponent.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_WINNER_KEY, spinnerWinner.getSelectedItem().toString());
+                    newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_CHARACHTER_KEY, spinnerChallengerCharacter.getSelectedItem().toString());
+                    newMatchParse.put(MatchListActivity.MATCH_OPPONENT_CHARACTER_KEY, spinnerOpponentCharacter.getSelectedItem().toString());
+                    newMatchParse.put(MatchListActivity.MATCH_STAGE_KEY, spinnerStage.getSelectedItem().toString());
                     //TODO: update wins and losses of each player
                     newMatchParse.saveInBackground();
 
