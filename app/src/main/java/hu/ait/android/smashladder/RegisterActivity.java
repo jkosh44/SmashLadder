@@ -24,6 +24,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     public static final String NAME_TAG = "NAME_TAG";
     public static final String RANK_TAG = "RANK_TAG";
+    public static final String WIN_TAG = "WIN_TAG";
+    public static final String LOSE_TAG = "LOSE_TAG";
 
     private EditText mEmailView;
     private EditText mTagView;
@@ -121,6 +123,8 @@ public class RegisterActivity extends AppCompatActivity {
             user.setPassword(password);
             user.put(NAME_TAG, tag);
             user.put(RANK_TAG, userAmount + 1);
+            user.put(WIN_TAG, 0);
+            user.put(LOSE_TAG, 0);
 
             user.signUpInBackground(new SignUpCallback() {
                 @Override

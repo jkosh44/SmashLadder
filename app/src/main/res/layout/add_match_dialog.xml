@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--TODO: change to spinner-->
-
     <Spinner
         android:id="@+id/spinnerChallenger"
         android:layout_width="match_parent"

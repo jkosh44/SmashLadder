@@ -42,6 +42,10 @@ public class AddMatchDialog extends DialogFragment {
     private AddMatchFragmentInterface addMatchFragmentInterface;
     private ArrayList<String> players = new ArrayList<String>();
 
+    Spinner spinnerChallenger;
+    Spinner spinnerOpponent;
+    Spinner spinnerWinner;
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -63,9 +67,9 @@ public class AddMatchDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.add_match_dialog, container, false);
 
-        final Spinner spinnerChallenger = (Spinner) v.findViewById(R.id.spinnerChallenger);
-        final Spinner spinnerOpponent = (Spinner) v.findViewById(R.id.spinnerOpponent);
-        final Spinner spinnerWinner = (Spinner) v.findViewById(R.id.spinnerWinner);
+        spinnerChallenger = (Spinner) v.findViewById(R.id.spinnerChallenger);
+        spinnerOpponent = (Spinner) v.findViewById(R.id.spinnerOpponent);
+        spinnerWinner = (Spinner) v.findViewById(R.id.spinnerWinner);
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.findInBackground(new FindCallback<ParseUser>() {
@@ -82,7 +86,9 @@ public class AddMatchDialog extends DialogFragment {
         });
 
         //TODO: make this work
-        ArrayAdapter<String> playerAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, players);
+        ArrayAdapter<String> playerAdapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, players);
+        playerAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+
         spinnerChallenger.setAdapter(playerAdapter);
         spinnerOpponent.setAdapter(playerAdapter);
         spinnerWinner.setAdapter(playerAdapter);
@@ -92,10 +98,10 @@ public class AddMatchDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 //TODO: this if statement also doesn't work right
-                if(spinnerChallenger.getSelectedItem() == null || spinnerOpponent.getSelectedItem() == null || spinnerWinner.getSelectedItem() == null) {
+                if (spinnerChallenger.getSelectedItem().toString() == null || spinnerOpponent.getSelectedItem().toString() == null || spinnerWinner.getSelectedItem().toString() == null) {
                     Toast.makeText(getContext(), R.string.add_match_error_no_selection, Toast.LENGTH_SHORT).show();
                 }
-                if(spinnerWinner.getSelectedItem() == spinnerChallenger.getSelectedItem() || spinnerWinner.getSelectedItem() == spinnerOpponent.getSelectedItem()) {
+                if (spinnerWinner.getSelectedItem() == spinnerChallenger.getSelectedItem() || spinnerWinner.getSelectedItem() == spinnerOpponent.getSelectedItem()) {
                     //TODO: add other fields possibly
                     ParseObject newMatchParse = new ParseObject(MatchListActivity.MATCHES_TAG);
                     //TODO: do we want to only allow the challenger to add matches of themselves?
@@ -103,14 +109,13 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_KEY, spinnerChallenger.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_KEY, spinnerOpponent.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_WINNER_KEY, spinnerWinner.getSelectedItem().toString());
+                    //TODO: update wins and losses of each player
                     newMatchParse.saveInBackground();
 
                     newMatch = new MatchItem(newMatchParse);
-                    //TODO: this also crashes the app, it works without this line
                     addMatchFragmentInterface.onAddMatchFragmentResult(newMatch);
                     dismiss();
-                }
-                else {
+                } else {
                     Toast.makeText(getContext(), R.string.add_match_bad_winner_error, Toast.LENGTH_SHORT).show();
                 }
             }
