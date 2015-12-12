@@ -79,28 +79,23 @@ public class AddMatchDialog extends DialogFragment {
                     for (int i = 0; i < objects.size(); i++) {
                         players.add(objects.get(i).get(RegisterActivity.NAME_TAG).toString());
                     }
+                    ArrayAdapter<String> playerAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, players);
+                    playerAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+
+                    spinnerChallenger.setAdapter(playerAdapter);
+                    spinnerOpponent.setAdapter(playerAdapter);
+                    spinnerWinner.setAdapter(playerAdapter);
                 } else {
                     e.printStackTrace();
                 }
             }
         });
 
-        //TODO: make this work
-        ArrayAdapter<String> playerAdapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, players);
-        playerAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-
-        spinnerChallenger.setAdapter(playerAdapter);
-        spinnerOpponent.setAdapter(playerAdapter);
-        spinnerWinner.setAdapter(playerAdapter);
 
         Button btnAddMatch = (Button) v.findViewById(R.id.btnAddMatch);
         btnAddMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: this if statement also doesn't work right
-                if (spinnerChallenger.getSelectedItem().toString() == null || spinnerOpponent.getSelectedItem().toString() == null || spinnerWinner.getSelectedItem().toString() == null) {
-                    Toast.makeText(getContext(), R.string.add_match_error_no_selection, Toast.LENGTH_SHORT).show();
-                }
                 if (spinnerWinner.getSelectedItem() == spinnerChallenger.getSelectedItem() || spinnerWinner.getSelectedItem() == spinnerOpponent.getSelectedItem()) {
                     //TODO: add other fields possibly
                     ParseObject newMatchParse = new ParseObject(MatchListActivity.MATCHES_TAG);
