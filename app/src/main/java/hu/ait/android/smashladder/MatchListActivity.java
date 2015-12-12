@@ -49,7 +49,7 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {
 
-                    matchAdapter = new MatchAdapter(objects, context);
+                    matchAdapter = new MatchAdapter(objects, context, getSupportFragmentManager());
 
                     RecyclerView recyclerViewMatchItem = (RecyclerView) findViewById(R.id.match_recycler_view);
                     recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(context));
@@ -87,13 +87,6 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
 
         dialog.show(getSupportFragmentManager(), AddMatchDialog.TAG);
     }
-
-    /*//TODO start matchdetails dialog, make sure to bundle matchItem. should this be implemented here?
-    public void startMatchDetails() {
-        final MatchDetailsDialog dialog = new MatchDetailsDialog();
-        //TODO: fix
-        dialog.show(getSupportFragmentManager(), MatchDetailsDialog.TAG);
-    }*/
 
 
     @Override

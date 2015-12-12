@@ -1,5 +1,6 @@
 package hu.ait.android.smashladder.adapter;
 
+import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.data.MatchItem;
+import hu.ait.android.smashladder.fragment.AddMatchDialog;
 import hu.ait.android.smashladder.fragment.MatchDetailsDialog;
 
 /**
@@ -38,17 +40,17 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
 
     private List<MatchItem> matchItemList;
     private Context context;
+    private FragmentManager fm;
 
 
-    public MatchAdapter(List<ParseObject> matches, Context context) {
+    public MatchAdapter(List<ParseObject> matches, Context context, FragmentManager fm) {
         this.context = context;
+        this.fm = fm;
 
         List<MatchItem> resValues = new ArrayList<>();
         for (int i = 0; i < matches.size(); i++) {
             resValues.add(new MatchItem(matches.get(i)));
         }
-
-        //Collections.sort(resValues, new PlayerComparator());
 
         matchItemList = resValues;
     }
@@ -70,9 +72,9 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* //TODO: start matchdetails dialog, make sure to bundle the match item
-                final MatchDetailsDialog dialog = new MatchDetailsDialog();
-                dialog.show(context.getSupportFragmentManager(), MatchDetailsDialog.TAG); */
+                //TODO: give the dialog the match item somehow
+                MatchDetailsDialog dialog = new MatchDetailsDialog();
+                dialog.show(fm, MatchDetailsDialog.TAG);
             }
         });
     }
