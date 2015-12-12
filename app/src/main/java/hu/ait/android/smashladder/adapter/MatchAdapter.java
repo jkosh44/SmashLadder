@@ -1,5 +1,7 @@
 package hu.ait.android.smashladder.adapter;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -80,7 +82,7 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
             @Override
             public void onClick(View v) {
                 //TODO: give the dialog the match item somehow
-                MatchDetailsDialog dialog = new MatchDetailsDialog();
+                MatchDetailsDialog dialog = MatchDetailsDialog.newInstance(matchItemList.get(position).getChallengerName(), matchItemList.get(position).getOpponentName(),matchItemList.get(position).getWinner());
                 dialog.show(fm, MatchDetailsDialog.TAG);
             }
         });
