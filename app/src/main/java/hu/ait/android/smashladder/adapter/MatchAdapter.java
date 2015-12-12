@@ -38,7 +38,7 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
 
     }
 
-    private List<MatchItem> matchItemList;
+    private ArrayList<MatchItem> matchItemList;
     private Context context;
     private FragmentManager fm;
 
@@ -47,12 +47,19 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
         this.context = context;
         this.fm = fm;
 
-        List<MatchItem> resValues = new ArrayList<>();
+        ArrayList<MatchItem> resValues = new ArrayList<>();
         for (int i = 0; i < matches.size(); i++) {
             resValues.add(new MatchItem(matches.get(i)));
         }
 
         matchItemList = resValues;
+    }
+
+    public MatchAdapter(ArrayList<MatchItem> matches, Context context, FragmentManager fm) {
+        this.context = context;
+        this.fm = fm;
+
+        matchItemList = matches;
     }
 
 

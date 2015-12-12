@@ -43,8 +43,6 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
 
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery(MATCHES_TAG);
-        //TODO: make sure the queries are all matches, uncomment when you add matches to parse
-        //TODO: why does this crash?
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {

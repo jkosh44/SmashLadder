@@ -1,13 +1,18 @@
 package hu.ait.android.smashladder;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import hu.ait.android.smashladder.adapter.PlayerAdapter;
@@ -24,7 +29,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
     private String playerName;
     private int playerRank;
     //TODO: get all matches such that either the challenger or opponent is playerName and create MatchItems out of them to fill up playerMatches
-    private List<MatchItem> playerMatches;
+    private ArrayList<MatchItem> playerMatches = new ArrayList<>();
 
     private ViewPager playerDetailsContainer;
 
@@ -41,6 +46,22 @@ public class PlayerDetailActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         playerName = extras.getString(PlayerAdapter.BUNDLE_NAME_KEY);
         playerRank = extras.getInt(PlayerAdapter.BUNDLE_RANK_KEY);
+
+        //TODO: only matches with playerName
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(MatchListActivity.MATCHES_TAG);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    for (int i = 0; i < objects.size(); i++) {
+                        if (objects.get(i).get(MatchListActivity.MATCH_OPPONENT_KEY.toString()).equals(playerName) || objects.get(i).get(MatchListActivity.MATCH_CHALLENGER_KEY.toString()).equals(playerName)) {
+                            playerMatches.add(new MatchItem(objects.get(i)));
+                        }
+                    }
+                } else {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
