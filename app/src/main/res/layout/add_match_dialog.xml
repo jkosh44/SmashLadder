@@ -6,20 +6,20 @@
 
     <!--TODO: change to spinner-->
 
-    <EditText
-        android:id="@+id/etChallenger"
+    <Spinner
+        android:id="@+id/spinnerChallenger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/challenger" />
 
-    <EditText
-        android:id="@+id/etOpponent"
+    <Spinner
+        android:id="@+id/spinnerOpponent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/opponent" />
 
-    <EditText
-        android:id="@+id/etWinner"
+    <Spinner
+        android:id="@+id/spinnerWinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/winner" />

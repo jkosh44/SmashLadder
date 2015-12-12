@@ -36,6 +36,7 @@ public class MatchDetailsDialog extends DialogFragment {
         TextView tvOpponent = (TextView) v.findViewById(R.id.tvOpponentDetails);
         TextView tvWinner = (TextView) v.findViewById(R.id.tvWinnerDetails);
 
+        //TODO: change this when you get match item
         tvChallenger.setText("test"/*challenger*/);
         tvOpponent.setText("test"/*opponent*/);
         tvWinner.setText("test"/*winner*/);

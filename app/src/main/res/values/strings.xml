@@ -24,4 +24,34 @@
     <string name="winner">Winner</string>
     <string name="add_match">Add Match</string>
     <string name="go_to_matches">Go to Matches</string>
+    <string name="add_match_bad_winner_error">Winner must be either Challenger or Opponent</string>
+    <string name="add_match_error_no_selection">Must select a player for every field</string>
+
+    <string-array name="characters">
+        <item>Dr. Mario</item>
+        <item>Mario</item>
+        <item>Luigi</item>
+        <item>Bowser</item>
+        <item>Peach</item>
+        <item>Yoshi</item>
+        <item>DK</item>
+        <item>Captain Falcon</item>
+        <item>Ganondorf</item>
+        <item>Falco</item>
+        <item>Fox</item>
+        <item>Ness</item>
+        <item>Ice Climbers</item>
+        <item>Kirby</item>
+        <item>Samus</item>
+        <item>Zelda/Sheik</item>
+        <item>Link</item>
+        <item>Young Link</item>
+        <item>Pichu</item>
+        <item>Pikachu</item>
+        <item>Jigglypuff</item>
+        <item>Mewtwo</item>
+        <item>Mr. Game &amp; Watch</item>
+        <item>Marth</item>
+        <item>Roy</item>
+    </string-array>
 </resources>
