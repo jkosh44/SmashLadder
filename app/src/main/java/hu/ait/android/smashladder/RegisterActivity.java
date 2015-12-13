@@ -128,7 +128,6 @@ public class RegisterActivity extends AppCompatActivity {
             user.put(RANK_TAG, userAmount + 1);
             user.put(WIN_TAG, 0);
             user.put(LOSE_TAG, 0);
-            user.put(CURRENT_MATCHES, new ArrayList<ParseObject>());
 
             user.signUpInBackground(new SignUpCallback() {
                 @Override

@@ -127,28 +127,9 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_CHARACHTER_KEY, spinnerChallengerCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_CHARACTER_KEY, spinnerOpponentCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_STAGE_KEY, spinnerStage.getSelectedItem().toString());
+                    newMatchParse.put(MatchListActivity.MATCH_UPDATED, false);
 
-                    //adds relation
-                    if (spinnerChallenger.getSelectedItem() == spinnerWinner.getSelectedItem()) {
-                        ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-                        userQuery.whereEqualTo(RegisterActivity.NAME_TAG, spinnerChallenger.getSelectedItem().toString());
-                        userQuery.getFirstInBackground(new GetCallback<ParseUser>() {
-                            @Override
-                            public void done(ParseUser object, ParseException e) {
-                                if (e == null) {
-                                    /*ParseRelation<ParseObject> relation = object.getRelation(MATCH_RELATION);
-                                    relation.add(newMatchParse);
-                                    object.saveInBackground();*/
-                                    ArrayList<ParseObject> currMatches = (ArrayList<ParseObject>) object.get(RegisterActivity.CURRENT_MATCHES);
-                                    currMatches.add(newMatchParse);
-                                    object.put(RegisterActivity.CURRENT_MATCHES, currMatches);
-                                }
-                                else {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-                    }
+
                     //TODO: update wins and losses of each player
                     newMatchParse.saveInBackground();
 

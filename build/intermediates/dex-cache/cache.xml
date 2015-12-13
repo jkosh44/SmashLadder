@@ -2,74 +2,74 @@
 <items version="2" >
 
     <item
-        jar="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
+        jar="/home/joe/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.11.0/6592129dec2caa8791d322c7e4b6b7a30e8eadae/parse-android-1.11.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-9a495dc0ec33bc180c453840521f517e54ea8521.jar" />
-    </item>
-    <item
-        jar="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-6c9346a202cd0fac527b2962e6a4b1186c371487.jar" />
-    </item>
-    <item
-        jar="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-c80a85f32ae69e662b5b2a112a706db36eb10617.jar" />
-    </item>
-    <item
-        jar="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-f1d18114c16e9b3ca9744cce52cd063dc6ee523a.jar" />
-    </item>
-    <item
-        jar="/home/joe/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-9d66399bf3ec8623e439fc49d5b5cc7553dbab6f.jar" />
+        sha1="6592129dec2caa8791d322c7e4b6b7a30e8eadae">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/parse-android-1.11.0-dba4a0e5df0eacc9172dec513b4ddd5e6cc538cc.jar" />
     </item>
     <item
         jar="/home/joe/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.3.0/8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c/bolts-tasks-1.3.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.3.0-2c74eb00558dfee2dc510d811d9bb4a8e5bdc1dd.jar" />
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.3.0-2c74eb00558dfee2dc510d811d9bb4a8e5bdc1dd.jar" />
     </item>
     <item
-        jar="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-d86fd4aed78aa855940fd0d144178ad25a648a09.jar" />
-    </item>
-    <item
-        jar="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-56de51183d91ba6b0da88c15645c611322ba9479.jar" />
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/classes-41f210506ea632927b90e3e81e208dc4f3de5b90.jar" />
+    </item>
+    <item
+        jar="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/classes-6291c2546ad440ed8176e76dee34843aeae58407.jar" />
     </item>
     <item
         jar="/home/joe/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.3.0/bc535105332645408ef5f1380215cc954b842178/bolts-applinks-1.3.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="bc535105332645408ef5f1380215cc954b842178">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.3.0-44d73201c1993857056d0fd593435b8a75e28649.jar" />
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.3.0-44d73201c1993857056d0fd593435b8a75e28649.jar" />
     </item>
     <item
-        jar="/home/joe/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.11.0/6592129dec2caa8791d322c7e4b6b7a30e8eadae/parse-android-1.11.0.jar"
+        jar="/home/joe/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="6592129dec2caa8791d322c7e4b6b7a30e8eadae">
-        <dex dex="/home/joe/AndroidStudioProjects/SmashLadder/app/build/intermediates/pre-dexed/debug/parse-android-1.11.0-dba4a0e5df0eacc9172dec513b4ddd5e6cc538cc.jar" />
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-9d66399bf3ec8623e439fc49d5b5cc7553dbab6f.jar" />
+    </item>
+    <item
+        jar="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-8bd039b9921a74672917cf2a8e098c5b0bed7acd.jar" />
+    </item>
+    <item
+        jar="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/classes-f0c437ae7cec32e3ddf9d0c90754f86a3e7a1e3f.jar" />
+    </item>
+    <item
+        jar="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/classes-f14f94ab3eec771e2aebaa9e5e723f25f9a3c080.jar" />
+    </item>
+    <item
+        jar="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/home/joe/Downloads/SmashLadder-master/app/build/intermediates/pre-dexed/debug/classes-a403f5a8a167cfa9b312f2d1e59d2197cebd21dd.jar" />
     </item>
 
 </items>
