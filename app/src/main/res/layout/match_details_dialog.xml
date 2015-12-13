@@ -10,7 +10,22 @@
         android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/tvChallengerCharacterDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
         android:id="@+id/tvOpponentDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvOpponentCharacterDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvStageDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

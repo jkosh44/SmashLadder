@@ -20,8 +20,50 @@
     <string name="player_details">Player Details</string>
     <string name="previous_player_matches">Previous Matches</string>
     <string name="challenger">Challenger</string>
+    <string name="character">Character</string>
     <string name="opponent">Opponent</string>
     <string name="winner">Winner</string>
     <string name="add_match">Add Match</string>
     <string name="go_to_matches">Go to Matches</string>
+    <string name="add_match_bad_winner_error">Winner must be either Challenger or Opponent</string>
+    <string name="add_match_error_no_selection">Must select a player for every field</string>
+    <string name="stage">Stage</string>
+    <string name="remove_me">"Character: "</string>
+
+    <string-array name="characters">
+        <item>Dr. Mario</item>
+        <item>Mario</item>
+        <item>Luigi</item>
+        <item>Bowser</item>
+        <item>Peach</item>
+        <item>Yoshi</item>
+        <item>DK</item>
+        <item>Captain Falcon</item>
+        <item>Ganondorf</item>
+        <item>Falco</item>
+        <item>Fox</item>
+        <item>Ness</item>
+        <item>Ice Climbers</item>
+        <item>Kirby</item>
+        <item>Samus</item>
+        <item>Zelda/Sheik</item>
+        <item>Link</item>
+        <item>Young Link</item>
+        <item>Pichu</item>
+        <item>Pikachu</item>
+        <item>Jigglypuff</item>
+        <item>Mewtwo</item>
+        <item>Mr. Game &amp; Watch</item>
+        <item>Marth</item>
+        <item>Roy</item>
+    </string-array>
+    <string-array name="stages">
+        <item>Yoshi\'s Story</item>
+        <item>Fountain of Dreams</item>
+        <item>Battlefield</item>
+        <item>Final Destination</item>
+        <item>Dream Land (N64)</item>
+        <item>Pokemon Stadium</item>
+        <item>Poke Floats</item>
+    </string-array>
 </resources>

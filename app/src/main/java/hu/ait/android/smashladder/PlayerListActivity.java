@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -32,7 +31,7 @@ public class PlayerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.matchListToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.playerListToolbar);
         setSupportActionBar(toolbar);
 
         final Context context = this;

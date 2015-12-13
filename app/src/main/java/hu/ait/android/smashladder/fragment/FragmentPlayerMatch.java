@@ -1,11 +1,22 @@
 package hu.ait.android.smashladder.fragment;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.parse.ParseObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import hu.ait.android.smashladder.R;
+import hu.ait.android.smashladder.adapter.MatchAdapter;
 import hu.ait.android.smashladder.data.MatchItem;
 import hu.ait.android.smashladder.data.PlayerItem;
 
@@ -16,26 +27,34 @@ public class FragmentPlayerMatch extends Fragment {
 
     //TODO: deal with the case that there is no matches
 
-    //private String challengerName;
-    //private String opponentName;
-    //private String winner;
-    //private String loser;
-    //private String stage;
-    //private String challengerCharacter;
-    //private String opponentCharacter;
-    //private int stockCount;
-    //this fragment needs a list of matches not just one match
+    MatchAdapter matchAdapter;
 
-    private List<MatchItem> playerMatches;
+
+    private ArrayList<MatchItem> playerMatches;
 
 
     public FragmentPlayerMatch() {
 
     }
 
-    public FragmentPlayerMatch(List<MatchItem> matches) {
+    public FragmentPlayerMatch(ArrayList<MatchItem> matches) {
 
         playerMatches = matches;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_player_matches, container, false);
+
+        matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
+
+        RecyclerView recyclerViewMatchItem = (RecyclerView) rootView.findViewById(R.id.playerMatchesRecyclerView);
+        recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewMatchItem.setAdapter(matchAdapter);
+        recyclerViewMatchItem.setVisibility(View.VISIBLE);
+
+        return rootView;
     }
 
     /*public FragmentPlayerMatch(String challengerName) {

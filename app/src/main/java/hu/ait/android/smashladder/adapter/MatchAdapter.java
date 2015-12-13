@@ -1,5 +1,8 @@
 package hu.ait.android.smashladder.adapter;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +18,7 @@ import java.util.List;
 
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.data.MatchItem;
+import hu.ait.android.smashladder.fragment.AddMatchDialog;
 import hu.ait.android.smashladder.fragment.MatchDetailsDialog;
 
 /**
@@ -30,27 +34,34 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
 
         public ViewHolder(View view) {
             super(view);
-            tvMatch = (TextView) view.findViewById(R.id.tvPlayer);
-            matchItemView = (LinearLayout) view.findViewById(R.id.playerItemView);
+            tvMatch = (TextView) view.findViewById(R.id.tvMatch);
+            matchItemView = (LinearLayout) view.findViewById(R.id.matchItemView);
         }
 
     }
 
-    private List<MatchItem> matchItemList;
+    private ArrayList<MatchItem> matchItemList;
     private Context context;
+    private FragmentManager fm;
 
 
-    public MatchAdapter(List<ParseObject> matches, Context context) {
+    public MatchAdapter(List<ParseObject> matches, Context context, FragmentManager fm) {
         this.context = context;
+        this.fm = fm;
 
-        List<MatchItem> resValues = new ArrayList<>();
+        ArrayList<MatchItem> resValues = new ArrayList<>();
         for (int i = 0; i < matches.size(); i++) {
             resValues.add(new MatchItem(matches.get(i)));
         }
 
-        //Collections.sort(resValues, new PlayerComparator());
-
         matchItemList = resValues;
+    }
+
+    public MatchAdapter(ArrayList<MatchItem> matches, Context context, FragmentManager fm) {
+        this.context = context;
+        this.fm = fm;
+
+        matchItemList = matches;
     }
 
 
@@ -65,14 +76,16 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         //TODO: add more stuff
-        holder.tvMatch.setText(matchItemList.get(position).getChallengerName());
+        holder.tvMatch.setText(matchItemList.get(position).getChallengerName() + " vs. " + matchItemList.get(position).getOpponentName());
 
         holder.matchItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* //TODO: start matchdetails dialog, make sure to bundle the match item
-                final MatchDetailsDialog dialog = new MatchDetailsDialog();
-                dialog.show(context.getSupportFragmentManager(), MatchDetailsDialog.TAG); */
+                MatchDetailsDialog dialog = MatchDetailsDialog.newInstance(
+                        matchItemList.get(position).getChallengerName(), matchItemList.get(position).getChallengerCharacter(),
+                        matchItemList.get(position).getOpponentName(), matchItemList.get(position).getOpponentCharacter(),
+                        matchItemList.get(position).getStage(), matchItemList.get(position).getWinner());
+                dialog.show(fm, MatchDetailsDialog.TAG);
             }
         });
     }
@@ -89,6 +102,7 @@ public class MatchAdapter  extends RecyclerView.Adapter<MatchAdapter.ViewHolder>
     public void addMatchItem(MatchItem item) {
         //TODO: add to Parse also
         matchItemList.add(item);
+        notifyDataSetChanged();
     }
 
 }
