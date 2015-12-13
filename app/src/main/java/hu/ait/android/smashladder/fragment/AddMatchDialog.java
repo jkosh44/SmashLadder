@@ -127,6 +127,8 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_CHARACHTER_KEY, spinnerChallengerCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_CHARACTER_KEY, spinnerOpponentCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_STAGE_KEY, spinnerStage.getSelectedItem().toString());
+
+                    //adds relation
                     if (spinnerChallenger.getSelectedItem().toString().equals(spinnerWinner.getSelectedItem().toString())) {
                         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
                         userQuery.whereEqualTo(RegisterActivity.NAME_TAG.toString(), spinnerChallenger.getSelectedItem().toString());

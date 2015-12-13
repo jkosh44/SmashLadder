@@ -56,7 +56,7 @@ public class UpdateLadderReceiver extends BroadcastReceiver {
                                             //Go through every match
                                             for (int posit = 0; posit < matches.size(); posit++) {
                                                 String opponent = matches.get(posit).getString(MatchListActivity.MATCH_OPPONENT_KEY);
-                                                int opponentRank;
+                                                int opponentRank = 0;
 
                                                 //gets the opponent rank
                                                 for (int pos = 0; pos < users.size(); pos++) {
@@ -64,10 +64,7 @@ public class UpdateLadderReceiver extends BroadcastReceiver {
                                                         opponentRank = users.get(pos).getInt(RegisterActivity.RANK_TAG);
                                                         break;
                                                     }
-                                                }
-                                                //TODO: what to do here?
-                                                if (opponentRank == null) {
-                                                    opponentRank = 1;
+                                                    
                                                 }
                                                 int movement;
                                                 int diff = challengerRank - opponentRank;
