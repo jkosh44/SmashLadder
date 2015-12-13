@@ -28,7 +28,7 @@
                     android:id="@+id/ivPhoto"
                     android:layout_width="182dp"
                     android:layout_height="218dp"
-                    android:src="@drawable/jkoshakow" />
+                    android:src="@drawable/fox" />
 
             </LinearLayout>
 
