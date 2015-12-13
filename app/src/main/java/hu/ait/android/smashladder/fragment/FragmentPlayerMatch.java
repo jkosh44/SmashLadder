@@ -2,6 +2,7 @@ package hu.ait.android.smashladder.fragment;
 
 import android.os.Bundle;
 //import android.support.annotation.Nullable;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -49,10 +50,19 @@ public class FragmentPlayerMatch extends Fragment {
         this.playerName = playerName;
     }
 
-    //@Nullable
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_player_matches, container, false);
+
+        matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
+        //matchAdapter = new MatchAdapter(objects, getContext(), getActivity().getSupportFragmentManager());
+        RecyclerView recyclerViewMatchItem = (RecyclerView) rootView.findViewById(R.id.playerMatchesRecyclerView);
+        recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewMatchItem.setAdapter(matchAdapter);
+        recyclerViewMatchItem.setVisibility(View.VISIBLE);
+        recyclerViewMatchItem.invalidate();
+        matchAdapter.notifyDataSetChanged();
 
         //TODO: only matches with playerName
         ParseQuery<ParseObject> query = ParseQuery.getQuery(MatchListActivity.MATCHES_TAG);
@@ -71,6 +81,7 @@ public class FragmentPlayerMatch extends Fragment {
                     recyclerViewMatchItem.setAdapter(matchAdapter);
                     recyclerViewMatchItem.setVisibility(View.VISIBLE);
                     recyclerViewMatchItem.invalidate();
+                    matchAdapter.notifyDataSetChanged();
                 } else {
                     e.printStackTrace();
                 }
