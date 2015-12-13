@@ -55,21 +55,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
         playerName = extras.getString(PlayerAdapter.BUNDLE_NAME_KEY);
         playerRank = extras.getInt(PlayerAdapter.BUNDLE_RANK_KEY);
 
-        //TODO: only matches with playerName
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(MatchListActivity.MATCHES_TAG);
-        query.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null) {
-                    for (int i = 0; i < objects.size(); i++) {
-                        if (objects.get(i).get(MatchListActivity.MATCH_OPPONENT_KEY.toString()).equals(playerName) || objects.get(i).get(MatchListActivity.MATCH_CHALLENGER_KEY.toString()).equals(playerName)) {
-                            playerMatches.add(new MatchItem(objects.get(i)));
-                        }
-                    }
-                } else {
-                    e.printStackTrace();
-                }
-            }
-        });
+
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -87,7 +73,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
                 case 0:
                     return new FragmentPlayerDetail(playerName, playerRank);
                 case 1:
-                    return new FragmentPlayerMatch(playerMatches);
+                    return new FragmentPlayerMatch(playerName);
                 default:
                     return new FragmentPlayerDetail(playerName, playerRank);
             }
