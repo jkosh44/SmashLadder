@@ -14,10 +14,12 @@ import android.widget.Toast;
 import com.parse.CountCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -26,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String RANK_TAG = "RANK_TAG";
     public static final String WIN_TAG = "WIN_TAG";
     public static final String LOSE_TAG = "LOSE_TAG";
+    public static final String CURRENT_MATCHES = "CURRENT_MATCHES";
 
     private EditText mEmailView;
     private EditText mTagView;
@@ -125,6 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
             user.put(RANK_TAG, userAmount + 1);
             user.put(WIN_TAG, 0);
             user.put(LOSE_TAG, 0);
+            user.put(CURRENT_MATCHES, new ArrayList<ParseObject>());
 
             user.signUpInBackground(new SignUpCallback() {
                 @Override
