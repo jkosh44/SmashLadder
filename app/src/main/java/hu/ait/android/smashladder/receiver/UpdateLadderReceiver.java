@@ -64,7 +64,7 @@ public class UpdateLadderReceiver extends BroadcastReceiver {
                                                         opponentRank = users.get(pos).getInt(RegisterActivity.RANK_TAG);
                                                         break;
                                                     }
-                                                    
+
                                                 }
                                                 int movement;
                                                 int diff = challengerRank - opponentRank;

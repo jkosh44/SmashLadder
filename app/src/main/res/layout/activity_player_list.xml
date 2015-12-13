@@ -13,6 +13,12 @@
         android:background="#444444"
         android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
 
+    <Button
+        android:id="@+id/btnTestUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST UPDATE"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/player_recycler_view"
         android:layout_width="match_parent"
