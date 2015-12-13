@@ -84,7 +84,12 @@
         <receiver
             android:name=".receiver.UpdateLadderReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+
+        <service
+            android:name=".service.UpdateService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
