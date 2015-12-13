@@ -9,7 +9,7 @@ import hu.ait.android.smashladder.RegisterActivity;
 /**
  * Created by joe on 12/13/15.
  */
-public class UserComarator implements Comparator<ParseUser> {
+public class UserComparator implements Comparator<ParseUser> {
 
     @Override
     public int compare(ParseUser lhs, ParseUser rhs) {

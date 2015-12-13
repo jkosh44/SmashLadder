@@ -18,7 +18,7 @@ import java.util.List;
 import hu.ait.android.smashladder.MatchListActivity;
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.RegisterActivity;
-import hu.ait.android.smashladder.data.UserComarator;
+import hu.ait.android.smashladder.data.UserComparator;
 import hu.ait.android.smashladder.fragment.AddMatchDialog;
 
 public class UpdateLadderReceiver extends BroadcastReceiver {
@@ -39,12 +39,13 @@ public class UpdateLadderReceiver extends BroadcastReceiver {
                     @Override
                     public void done(final List<ParseUser> users, final ParseException e) {
                         if (e == null) {
-                            Collections.sort(users, new UserComarator());
+                            Collections.sort(users, new UserComparator());
 
                             //Go through every user
                             for (int i = users.size() - 1; i >= 0; i--) {
                                 final int challengerRank = users.get(i).getInt(RegisterActivity.RANK_TAG);
                                 final ParseUser currUser = users.get(i);
+
                                 //get his matches that haven't been updated yet
                                 final ParseRelation<ParseObject> relation = users.get(i).getRelation(AddMatchDialog.MATCH_RELATION);
                                 relation.getQuery().findInBackground(new FindCallback<ParseObject>() {
@@ -56,36 +57,43 @@ public class UpdateLadderReceiver extends BroadcastReceiver {
                                             for (int posit = 0; posit < matches.size(); posit++) {
                                                 String opponent = matches.get(posit).getString(MatchListActivity.MATCH_OPPONENT_KEY);
                                                 int opponentRank;
+
+                                                //gets the opponent rank
                                                 for (int pos = 0; pos < users.size(); pos++) {
                                                     if (users.get(pos).get(RegisterActivity.NAME_TAG).toString().equals(opponent)) {
                                                         opponentRank = users.get(pos).getInt(RegisterActivity.RANK_TAG);
                                                         break;
                                                     }
                                                 }
-                                                opponentRank = 1;
+                                                //TODO: what to do here?
+                                                if (opponentRank == null) {
+                                                    opponentRank = 1;
+                                                }
                                                 int movement;
-                                                int diff = challengerRank-opponentRank;
+                                                int diff = challengerRank - opponentRank;
                                                 if (diff == 1 || diff == 2) {
                                                     movement = 1;
-                                                }
-                                                else if(diff == 3 || diff == 4) {
+                                                } else if (diff == 3 || diff == 4) {
                                                     movement = 2;
-                                                }
-                                                else {
+                                                } else {
                                                     movement = 3;
                                                 }
 
+                                                //Updates the rankings
                                                 currUser.put(RegisterActivity.RANK_TAG, challengerRank - 3);
-                                                for(int spot = users.size()-challengerRank+1; spot <= users.size()-challengerRank+ movement; spot ++) {
+                                                for (int spot = users.size() - challengerRank + 1; spot <= users.size() - challengerRank + movement; spot++) {
                                                     int currRank = users.get(spot).getInt(RegisterActivity.RANK_TAG);
-                                                    users.get(spot).put(RegisterActivity.RANK_TAG, currRank-1);
+                                                    users.get(spot).put(RegisterActivity.RANK_TAG, currRank - 1);
                                                 }
+
+                                                relation.remove(matches.get(posit));
                                             }
                                         } else {
                                             er.printStackTrace();
                                         }
                                     }
                                 });
+                                currUser.saveInBackground();
                             }
                         } else {
                             e.printStackTrace();
