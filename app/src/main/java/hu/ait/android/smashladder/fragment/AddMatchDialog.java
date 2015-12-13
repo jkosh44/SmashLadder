@@ -13,9 +13,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseRelation;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ import hu.ait.android.smashladder.data.MatchItem;
 public class AddMatchDialog extends DialogFragment {
 
     public static final String TAG = "AddMatchDialogFragment";
+    public static final String MATCH_RELATION = "MATCH_RELATION";
 
     public interface AddMatchFragmentInterface {
         public void onAddMatchFragmentResult(MatchItem match);
@@ -78,7 +81,7 @@ public class AddMatchDialog extends DialogFragment {
         spinnerStage = (Spinner) v.findViewById(R.id.spinnerStage);
         spinnerWinner = (Spinner) v.findViewById(R.id.spinnerWinner);
 
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        final ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
             public void done(List<ParseUser> objects, ParseException e) {
@@ -115,7 +118,7 @@ public class AddMatchDialog extends DialogFragment {
             public void onClick(View v) {
                 if (spinnerWinner.getSelectedItem() == spinnerChallenger.getSelectedItem() || spinnerWinner.getSelectedItem() == spinnerOpponent.getSelectedItem()) {
                     //TODO: add other fields possibly
-                    ParseObject newMatchParse = new ParseObject(MatchListActivity.MATCHES_TAG);
+                    final ParseObject newMatchParse = new ParseObject(MatchListActivity.MATCHES_TAG);
                     //TODO: do we want to only allow the challenger to add matches of themselves?
                     //      we could change match_challenger_key to ParseUser.getCurrentUser()
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_KEY, spinnerChallenger.getSelectedItem().toString());
@@ -124,6 +127,20 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_CHARACHTER_KEY, spinnerChallengerCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_CHARACTER_KEY, spinnerOpponentCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_STAGE_KEY, spinnerStage.getSelectedItem().toString());
+                    if (spinnerChallenger.getSelectedItem().toString().equals(spinnerWinner.getSelectedItem().toString())) {
+                        ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
+                        userQuery.whereEqualTo(RegisterActivity.NAME_TAG.toString(), spinnerChallenger.getSelectedItem().toString());
+                        userQuery.getFirstInBackground(new GetCallback<ParseUser>() {
+                            @Override
+                            public void done(ParseUser object, ParseException e) {
+                                if (e == null) {
+                                    ParseRelation<ParseObject> relation = object.getRelation(MATCH_RELATION);
+                                    relation.add(newMatchParse);
+                                    object.saveInBackground();
+                                }
+                            }
+                        });
+                    }
                     //TODO: update wins and losses of each player
                     newMatchParse.saveInBackground();
 

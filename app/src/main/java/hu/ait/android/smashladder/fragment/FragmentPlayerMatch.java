@@ -1,7 +1,7 @@
 package hu.ait.android.smashladder.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+//import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -42,7 +42,7 @@ public class FragmentPlayerMatch extends Fragment {
         playerMatches = matches;
     }
 
-    @Nullable
+    //@Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_player_matches, container, false);
@@ -61,3 +61,5 @@ public class FragmentPlayerMatch extends Fragment {
         this.challengerName = challengerName;
     }*/
 }
+
+

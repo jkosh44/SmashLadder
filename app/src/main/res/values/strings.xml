@@ -28,11 +28,11 @@
     <string name="add_match_bad_winner_error">Winner must be either Challenger or Opponent</string>
     <string name="add_match_error_no_selection">Must select a player for every field</string>
     <string name="stage">Stage:</string>
-    <string name="remove_me">"Character: "</string>
     <string name="challenge_text">Challenge</string>
     <string name="moreinfo_text">Details</string>
     <string name="matchhistory">Match History</string>
     <string name="name_placeholder">FayJ vs JCW</string>
+    <string name="update_failed">Update failed</string>
 
     <string-array name="characters">
         <item>Dr. Mario</item>

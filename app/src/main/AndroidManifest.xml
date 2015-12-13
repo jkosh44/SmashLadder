@@ -30,7 +30,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name">
@@ -40,8 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
 
         <service android:name="com.parse.PushService" />
 
@@ -82,6 +80,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hu.ait.android.smashladder.PlayerListActivity" />
         </activity>
+
+        <receiver
+            android:name=".receiver.UpdateLadderReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
     </application>
 
 </manifest>
