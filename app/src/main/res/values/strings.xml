@@ -19,16 +19,20 @@
     <string name="add_match_fragment_interface_error">" must implement AddMatchFragmentInterface"</string>
     <string name="player_details">Player Details</string>
     <string name="previous_player_matches">Previous Matches</string>
-    <string name="challenger">Challenger</string>
-    <string name="character">Character</string>
-    <string name="opponent">Opponent</string>
-    <string name="winner">Winner</string>
+    <string name="challenger">Challenger:</string>
+    <string name="character">Character:</string>
+    <string name="opponent">Opponent:</string>
+    <string name="winner">Winner:</string>
     <string name="add_match">Add Match</string>
     <string name="go_to_matches">Go to Matches</string>
     <string name="add_match_bad_winner_error">Winner must be either Challenger or Opponent</string>
     <string name="add_match_error_no_selection">Must select a player for every field</string>
-    <string name="stage">Stage</string>
+    <string name="stage">Stage:</string>
     <string name="remove_me">"Character: "</string>
+    <string name="challenge_text">Challenge</string>
+    <string name="moreinfo_text">Details</string>
+    <string name="matchhistory">Match History</string>
+    <string name="name_placeholder">FayJ vs JCW</string>
 
     <string-array name="characters">
         <item>Dr. Mario</item>
