@@ -129,16 +129,22 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_STAGE_KEY, spinnerStage.getSelectedItem().toString());
 
                     //adds relation
-                    if (spinnerChallenger.getSelectedItem().toString().equals(spinnerWinner.getSelectedItem().toString())) {
+                    if (spinnerChallenger.getSelectedItem() == spinnerWinner.getSelectedItem()) {
                         ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-                        userQuery.whereEqualTo(RegisterActivity.NAME_TAG.toString(), spinnerChallenger.getSelectedItem().toString());
+                        userQuery.whereEqualTo(RegisterActivity.NAME_TAG, spinnerChallenger.getSelectedItem().toString());
                         userQuery.getFirstInBackground(new GetCallback<ParseUser>() {
                             @Override
                             public void done(ParseUser object, ParseException e) {
                                 if (e == null) {
-                                    ParseRelation<ParseObject> relation = object.getRelation(MATCH_RELATION);
+                                    /*ParseRelation<ParseObject> relation = object.getRelation(MATCH_RELATION);
                                     relation.add(newMatchParse);
-                                    object.saveInBackground();
+                                    object.saveInBackground();*/
+                                    ArrayList<ParseObject> currMatches = (ArrayList<ParseObject>) object.get(RegisterActivity.CURRENT_MATCHES);
+                                    currMatches.add(newMatchParse);
+                                    object.put(RegisterActivity.CURRENT_MATCHES, currMatches);
+                                }
+                                else {
+                                    e.printStackTrace();
                                 }
                             }
                         });
