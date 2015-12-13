@@ -34,8 +34,6 @@ import hu.ait.android.smashladder.data.MatchItem;
 public class AddMatchDialog extends DialogFragment {
 
     public static final String TAG = "AddMatchDialogFragment";
-    public static final String MATCH_RELATION = "MATCH_RELATION";
-
     public interface AddMatchFragmentInterface {
         public void onAddMatchFragmentResult(MatchItem match);
     }

@@ -36,6 +36,7 @@ public class FragmentPlayerMatch extends Fragment {
 
 
     private ArrayList<MatchItem> playerMatches = new ArrayList<>();
+    //private ArrayList<ParseObject> playerMatches = new ArrayList<>();
     private String playerName;
 
 
@@ -63,11 +64,13 @@ public class FragmentPlayerMatch extends Fragment {
                             playerMatches.add(new MatchItem(objects.get(i)));
                         }
                     }
-                    matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
+                   matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
+                    //matchAdapter = new MatchAdapter(objects, getContext(), getActivity().getSupportFragmentManager());
                     RecyclerView recyclerViewMatchItem = (RecyclerView) rootView.findViewById(R.id.playerMatchesRecyclerView);
                     recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(getContext()));
                     recyclerViewMatchItem.setAdapter(matchAdapter);
                     recyclerViewMatchItem.setVisibility(View.VISIBLE);
+                    recyclerViewMatchItem.invalidate();
                 } else {
                     e.printStackTrace();
                 }

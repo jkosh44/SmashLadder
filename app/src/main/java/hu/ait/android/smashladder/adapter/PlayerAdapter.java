@@ -80,6 +80,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         holder.playerItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Bundle playerBundle = new Bundle();
                 playerBundle.putString(BUNDLE_NAME_KEY, playerItemsList.get(position).getName());
                 playerBundle.putInt(BUNDLE_RANK_KEY, playerItemsList.get(position).getRank());

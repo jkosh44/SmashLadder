@@ -28,7 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String RANK_TAG = "RANK_TAG";
     public static final String WIN_TAG = "WIN_TAG";
     public static final String LOSE_TAG = "LOSE_TAG";
-    public static final String CURRENT_MATCHES = "CURRENT_MATCHES";
 
     private EditText mEmailView;
     private EditText mTagView;
