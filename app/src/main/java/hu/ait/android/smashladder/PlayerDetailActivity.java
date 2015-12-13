@@ -1,11 +1,13 @@
 package hu.ait.android.smashladder;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -38,10 +40,16 @@ public class PlayerDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_detail);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.playerDetailToolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         playerDetailsContainer = (ViewPager) findViewById(R.id.player_details_container);
         playerDetailsContainer.setAdapter(mSectionsPagerAdapter);
+        TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout);
+        tabLayout.setupWithViewPager(playerDetailsContainer);
 
         Bundle extras = getIntent().getExtras();
         playerName = extras.getString(PlayerAdapter.BUNDLE_NAME_KEY);

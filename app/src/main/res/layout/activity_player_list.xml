@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:fitsSystemWindows="true">
+    tools:context="hu.ait.android.smashladder.PlayerListActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/playerListToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0000ff"
+        android:background="#444444"
         android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView

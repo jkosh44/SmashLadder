@@ -71,12 +71,12 @@ public class MatchDetailsDialog extends DialogFragment {
         TextView tvStage = (TextView) v.findViewById(R.id.tvStageDetails);
         TextView tvWinner = (TextView) v.findViewById(R.id.tvWinnerDetails);
 
-        tvChallenger.setText(getString(R.string.challenger) + ": " +challenger);
-        tvChallengerCharacter.setText(getString(R.string.character) + ": " +challengerCharacter);
-        tvOpponent.setText(getString(R.string.opponent) + ": " +opponent);
-        tvOpponentCharacter.setText(getString(R.string.character) + ": " +opponentCharacter);
-        tvStage.setText(getString(R.string.stage) + ": " + stage);
-        tvWinner.setText(getString(R.string.winner) +": " +winner);
+        tvChallenger.setText(challenger);
+        tvChallengerCharacter.setText(challengerCharacter);
+        tvOpponent.setText(opponent);
+        tvOpponentCharacter.setText(opponentCharacter);
+        tvStage.setText(stage);
+        tvWinner.setText(winner);
 
         return v;
     }

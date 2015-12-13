@@ -75,7 +75,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         //TODO: add more stuff
-        holder.tvPlayer.setText(playerItemsList.get(position).getName());
+        holder.tvPlayer.setText((position + 1)+". "+playerItemsList.get(position).getName());
 
         holder.playerItemView.setOnClickListener(new View.OnClickListener() {
             @Override

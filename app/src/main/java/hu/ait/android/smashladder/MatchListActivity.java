@@ -2,6 +2,8 @@ package hu.ait.android.smashladder;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -41,8 +43,9 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.playerListToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.matchListToolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final Context context = this;
 
@@ -75,6 +78,9 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
             case R.id.action_add_match:
                 addMatch();
                 return true;

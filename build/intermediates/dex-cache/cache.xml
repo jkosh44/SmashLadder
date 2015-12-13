@@ -2,67 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-0d149bf87bb0885638dd6a03988d0f3f6e2509b4.jar" />
-    </item>
-    <item
-        jar="/Users/Jason/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.11.0/6592129dec2caa8791d322c7e4b6b7a30e8eadae/parse-android-1.11.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="6592129dec2caa8791d322c7e4b6b7a30e8eadae">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/parse-android-1.11.0-fa876035981b3bac5a74df8cf834dc30ed0daebc.jar" />
-    </item>
-    <item
-        jar="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-46ac49f0f71961086dce7a0c9bdd67415f912c9e.jar" />
-    </item>
-    <item
-        jar="/Users/Jason/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.3.0/bc535105332645408ef5f1380215cc954b842178/bolts-applinks-1.3.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="bc535105332645408ef5f1380215cc954b842178">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.3.0-320b09aae9ff96dc7b6969b60130c1644837b9bf.jar" />
-    </item>
-    <item
-        jar="/Users/Jason/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-09e90c8cae93f1abd2fe4ae22ccd69f96f9a59c6.jar" />
-    </item>
-    <item
-        jar="/Users/Jason/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.3.0/8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c/bolts-tasks-1.3.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8a62fd16fcc1c06f284fc98e6cbded2a5af1dd4c">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.3.0-324f42e9a3b9585951e0a1cb337746fabf1d547a.jar" />
-    </item>
-    <item
-        jar="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-c3671a82e7b49cfd5c89ab793a449f8eae42dfe3.jar" />
-    </item>
-    <item
-        jar="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-838f5ea6afb23ad4ea84bb95d7f7603595752ac9.jar" />
-    </item>
-    <item
-        jar="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-f5b7b3d8a237449439f54e01a92fb626314fc24a.jar" />
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="/Volumes/JCW/AndroidStudioProjects/FinalProject/SmashLadder/app/build/intermediates/pre-dexed/debug/classes-39ab11c9fa2764d7dd88ea5bedc096161cf2dc7d.jar" />
     </item>
 
 </items>
