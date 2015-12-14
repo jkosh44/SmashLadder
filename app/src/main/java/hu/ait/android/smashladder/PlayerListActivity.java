@@ -21,6 +21,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.Calendar;
 import java.util.List;
@@ -45,7 +46,26 @@ public class PlayerListActivity extends AppCompatActivity {
 
         final Context context = this;
 
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        //get all matches
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(RegisterActivity.RANK);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    playerAdapter = new PlayerAdapter(objects, context);
+
+                    RecyclerView recyclerViewPlayerItem = (RecyclerView) findViewById(R.id.player_recycler_view);
+                    recyclerViewPlayerItem.setLayoutManager(new LinearLayoutManager(context));
+                    recyclerViewPlayerItem.setAdapter(playerAdapter);
+                    recyclerViewPlayerItem.setVisibility(View.VISIBLE);
+                } else {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        /*ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
             public void done(List<ParseUser> objects, ParseException e) {
@@ -57,7 +77,7 @@ public class PlayerListActivity extends AppCompatActivity {
                 recyclerViewPlayerItem.setAdapter(playerAdapter);
                 recyclerViewPlayerItem.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
 
         Intent updateIntent = new Intent(PlayerListActivity.this, UpdateLadderReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(PlayerListActivity.this, 0, updateIntent, 0);
@@ -124,56 +144,69 @@ public class PlayerListActivity extends AppCompatActivity {
                                     final String opponent = currMatch.get(MatchListActivity.MATCH_OPPONENT_KEY).toString();
 
 
-                                    ParseQuery<ParseUser> query = ParseUser.getQuery();
-                                    query.findInBackground(new FindCallback<ParseUser>() {
+                                    ParseQuery<ParseObject> query = ParseQuery.getQuery(RegisterActivity.RANK);
+                                    query.findInBackground(new FindCallback<ParseObject>() {
                                         @Override
-                                        public void done(List<ParseUser> objects, ParseException e) {
+                                        public void done(List<ParseObject> objects, ParseException e) {
                                             int challengerRank = 0;
                                             int opponentRank = 0;
 
                                             for (int i = 0; i < objects.size(); i++) {
-                                                ParseUser currUser = objects.get(i);
+                                                ParseObject currRankClass = objects.get(i);
 
-                                                if (currUser.get(RegisterActivity.NAME_TAG).toString().equals(challenger)) {
-                                                    challengerRank = currUser.getInt(RegisterActivity.RANK_TAG);
+                                                if (currRankClass.get(RegisterActivity.PLAYER).toString().equals(challenger)) {
+                                                    challengerRank = currRankClass.getInt(RegisterActivity.NUMBER);
                                                 }
 
-                                                if (currUser.get(RegisterActivity.NAME_TAG).toString().equals(opponent)) {
-                                                    opponentRank = currUser.getInt(RegisterActivity.RANK_TAG);
+                                                if (currRankClass.get(RegisterActivity.PLAYER).toString().equals(opponent)) {
+                                                    opponentRank = currRankClass.getInt(RegisterActivity.NUMBER);
                                                 }
                                             }
 
-                                            final int movement;
+                                            int movement;
                                             int diff = challengerRank - opponentRank;
-                                            if (diff == 1 || diff == 2) {
-                                                movement = 1;
-                                            } else if (diff == 3 || diff == 4) {
-                                                movement = 2;
-                                            } else {
-                                                movement = 3;
-                                            }
-                                            int newRank = challengerRank - movement;
-
-                                            Toast.makeText(PlayerListActivity.this, "Challenger Rank: " + challengerRank + "\n Opponent Rank: " + opponentRank + "\nMovement: " + movement + "\nnew rank: " + newRank, Toast.LENGTH_LONG).show();
-
-                                            for (int i = 0; i < objects.size(); i++) {
-                                                ParseUser currUser = objects.get(i);
-
-                                                int currRank = (int) currUser.get(RegisterActivity.RANK_TAG);
-
-                                                if (currRank == challengerRank) {
-                                                    currUser.put(RegisterActivity.RANK_TAG, newRank);
-                                                    Toast.makeText(PlayerListActivity.this, currUser.get(RegisterActivity.NAME_TAG).toString() + ", the challenger " + newRank, Toast.LENGTH_SHORT).show();
-                                                    currUser.saveInBackground();
-                                                } else if (currRank >= challengerRank - movement && currRank < challengerRank) {
-                                                    currUser.put(RegisterActivity.RANK_TAG, currRank + 1);
-                                                    Toast.makeText(PlayerListActivity.this, currUser.get(RegisterActivity.NAME_TAG).toString() + " new rank" + (currRank + 1), Toast.LENGTH_SHORT).show();
-                                                    currUser.saveInBackground();
+                                            if (diff > 0) {
+                                                if (diff == 1 || diff == 2) {
+                                                    movement = 1;
+                                                } else if (diff == 3 || diff == 4) {
+                                                    movement = 2;
+                                                } else {
+                                                    movement = 3;
                                                 }
-                                                currUser.saveInBackground();
+                                                int newRank = challengerRank - movement;
+
+                                                Toast.makeText(PlayerListActivity.this, "Challenger Rank: " + challengerRank + "\n Opponent Rank: " + opponentRank + "\nMovement: " + movement + "\nnew rank: " + newRank, Toast.LENGTH_LONG).show();
+
+                                                for (int i = 0; i < objects.size(); i++) {
+                                                    ParseObject currRankClass = objects.get(i);
+
+                                                    int currRank = (int) currRankClass.get(RegisterActivity.NUMBER);
+                                                    String currUser = currRankClass.get(RegisterActivity.PLAYER).toString();
+
+
+                                                    if (currUser.equals(challenger)) {
+                                                        currRankClass.put(RegisterActivity.NUMBER, newRank);
+                                                        //Toast.makeText(PlayerListActivity.this, currRankClass.get(RegisterActivity.PLAYER).toString() + ", the challenger " + newRank, Toast.LENGTH_SHORT).show();
+                                                        currRankClass.saveInBackground();
+                                                    } else if (currRank >= challengerRank - movement && currRank < challengerRank) {
+                                                        currRankClass.put(RegisterActivity.NUMBER, currRank + 1);
+                                                        //Toast.makeText(PlayerListActivity.this, currRankClass.get(RegisterActivity.PLAYER).toString() + " new rank" + (currRank + 1), Toast.LENGTH_SHORT).show();
+                                                        currRankClass.saveInBackground();
+                                                    }
+                                                    currRankClass.saveInBackground(new SaveCallback() {
+                                                        @Override
+                                                        public void done(ParseException e) {
+                                                            if (e != null) {
+                                                                Toast.makeText(PlayerListActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                e.printStackTrace();
+                                                            }
+                                                        }
+                                                    });
+                                                }
                                             }
                                         }
                                     });
+
 
                                 }
                             }

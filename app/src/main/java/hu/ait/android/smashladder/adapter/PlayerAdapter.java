@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
@@ -50,12 +51,23 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     private Context context;
 
 
-    public PlayerAdapter(List<ParseUser> users, Context context) {
+    /*public PlayerAdapter(List<ParseUser> users, Context context) {
         this.context = context;
 
         List<PlayerItem> resValues = new ArrayList<>();
         for (int i = 0; i < users.size(); i++) {
             resValues.add(new PlayerItem(users.get(i)));
+        }
+
+        Collections.sort(resValues, new PlayerComparator());
+
+        playerItemsList = resValues;
+    }*/
+
+    public PlayerAdapter(List<ParseObject> ranks, Context context) {
+        List<PlayerItem> resValues = new ArrayList<>();
+        for (int i = 0; i < ranks.size(); i++) {
+            resValues.add(new PlayerItem(ranks.get(i)));
         }
 
         Collections.sort(resValues, new PlayerComparator());

@@ -1,8 +1,7 @@
 package hu.ait.android.smashladder.data;
 
+import com.parse.ParseObject;
 import com.parse.ParseUser;
-
-import java.util.Comparator;
 
 import hu.ait.android.smashladder.RegisterActivity;
 
@@ -26,6 +25,12 @@ public class PlayerItem {
         //this.wins = 1; //user.getWins;
         //this.losses = 1; //user.getLosses;
     }
+
+    public PlayerItem(ParseObject rank) {
+        this.name =  rank.get(RegisterActivity.PLAYER).toString();
+        this.rank = rank.getInt(RegisterActivity.NUMBER);
+    }
+
 
     public String getName() {
         return name;
