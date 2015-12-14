@@ -30,7 +30,6 @@ public class UpdateService extends Service {
     @Override
     public void onStart(Intent intent, int startId) {
         try {
-
             testUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,11 +100,9 @@ public class UpdateService extends Service {
 
                                                     if (currUser.equals(challenger)) {
                                                         currRankClass.put(RegisterActivity.NUMBER, newRank);
-                                                        //Toast.makeText(PlayerListActivity.this, currRankClass.get(RegisterActivity.PLAYER).toString() + ", the challenger " + newRank, Toast.LENGTH_SHORT).show();
                                                         currRankClass.saveInBackground();
                                                     } else if (currRank >= challengerRank - movement && currRank < challengerRank) {
                                                         currRankClass.put(RegisterActivity.NUMBER, currRank + 1);
-                                                        //Toast.makeText(PlayerListActivity.this, currRankClass.get(RegisterActivity.PLAYER).toString() + " new rank" + (currRank + 1), Toast.LENGTH_SHORT).show();
                                                         currRankClass.saveInBackground();
                                                     }
                                                     currRankClass.saveInBackground(new SaveCallback() {
@@ -132,7 +129,6 @@ public class UpdateService extends Service {
 
 
             } catch (Exception err) {
-                Toast.makeText(this, R.string.update_failed, Toast.LENGTH_SHORT).show();
                 err.printStackTrace();
             }
         }

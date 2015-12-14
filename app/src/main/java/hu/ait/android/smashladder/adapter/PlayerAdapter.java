@@ -3,6 +3,7 @@ package hu.ait.android.smashladder.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,20 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import hu.ait.android.smashladder.MatchListActivity;
 import hu.ait.android.smashladder.PlayerDetailActivity;
 import hu.ait.android.smashladder.R;
+import hu.ait.android.smashladder.data.MatchItem;
 import hu.ait.android.smashladder.data.PlayerComparator;
 import hu.ait.android.smashladder.data.PlayerItem;
 
@@ -28,10 +34,8 @@ import hu.ait.android.smashladder.data.PlayerItem;
  */
 public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder> {
 
-    public static final String PLAYER_ITEM_KEY = "PLAYER_ITEM_KEY";
     public static final String BUNDLE_RANK_KEY = "BUNDLE_RANK_KEY";
     public static final String BUNDLE_NAME_KEY = "BUNDLE_NAME_KEY";
-    private Intent detailsIntent;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -50,19 +54,6 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     private List<PlayerItem> playerItemsList;
     private Context context;
 
-
-    /*public PlayerAdapter(List<ParseUser> users, Context context) {
-        this.context = context;
-
-        List<PlayerItem> resValues = new ArrayList<>();
-        for (int i = 0; i < users.size(); i++) {
-            resValues.add(new PlayerItem(users.get(i)));
-        }
-
-        Collections.sort(resValues, new PlayerComparator());
-
-        playerItemsList = resValues;
-    }*/
 
     public PlayerAdapter(List<ParseObject> ranks, Context context) {
         this.context = context;
@@ -104,6 +95,8 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
                 intent.putExtras(playerBundle);
 
                 context.startActivity(intent);
+
+
 
             }
         });

@@ -33,15 +33,13 @@ public class RegisterActivity extends AppCompatActivity {
     private View mProgressView;
     private View mRegisterFormView;
 
-    private String eMial;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         Intent intent = getIntent();
-        eMial = intent.getStringExtra(LoginActivity.EMAIL_TAG);
+        String eMail = intent.getStringExtra(LoginActivity.EMAIL_TAG);
 
         mEmailView = (EditText) findViewById(R.id.etRegEmail);
         mTagView = (EditText) findViewById(R.id.etTag);
@@ -49,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         mProgressView = findViewById(R.id.register_progress);
         mRegisterFormView = findViewById(R.id.register_form);
 
-        mEmailView.setText(eMial);
+        mEmailView.setText(eMail);
 
         Button btnRegister = (Button) findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +154,11 @@ public class RegisterActivity extends AppCompatActivity {
         //TODO: Replace this with your own logic
         return email.contains("@wesleyan.edu");
     }
+
+    /*private boolean isPasswordValid(String password) {
+        //TODO: Replace this with your own logic
+        return password.length() > 4;
+    } */
 
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow

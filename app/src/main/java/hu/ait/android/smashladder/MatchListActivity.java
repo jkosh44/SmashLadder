@@ -31,7 +31,7 @@ public class MatchListActivity extends AppCompatActivity implements AddMatchDial
     public static final String MATCH_CHALLENGER_KEY = "MATCH_CHALLENGER_KEY";
     public static final String MATCH_OPPONENT_KEY = "MATCH_OPPONENT_KEY";
     public static final String MATCH_WINNER_KEY = "MATCH_WINNER_KEY";
-    public static final String MATCH_CHALLENGER_CHARACHTER_KEY = "MATCH_CHALLENGER_CHARACTER_KEY";
+    public static final String MATCH_CHALLENGER_CHARACTER_KEY = "MATCH_CHALLENGER_CHARACTER_KEY";
     public static final String MATCH_OPPONENT_CHARACTER_KEY = "MATCH_OPPONENT_CHARACTER_KEY";
     public static final String MATCH_STAGE_KEY = "MATCH_STAGE_KEY";
     public static final String MATCH_UPDATED = "MATCH_UPDATED";

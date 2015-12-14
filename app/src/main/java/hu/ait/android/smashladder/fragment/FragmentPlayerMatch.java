@@ -1,7 +1,6 @@
 package hu.ait.android.smashladder.fragment;
 
 import android.os.Bundle;
-//import android.support.annotation.Nullable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,13 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,8 @@ import hu.ait.android.smashladder.MatchListActivity;
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.adapter.MatchAdapter;
 import hu.ait.android.smashladder.data.MatchItem;
-import hu.ait.android.smashladder.data.PlayerItem;
+
+//import android.support.annotation.Nullable;
 
 /**
  * Created by joe on 12/5/15.
@@ -35,20 +33,13 @@ public class FragmentPlayerMatch extends Fragment {
 
     MatchAdapter matchAdapter;
 
-
     private ArrayList<MatchItem> playerMatches = new ArrayList<>();
-    //private ArrayList<ParseObject> playerMatches = new ArrayList<>();
     private String playerName;
 
 
     public FragmentPlayerMatch() {
 
     }
-
-    /*public FragmentPlayerMatch(ArrayList<MatchItem> playerMatches) {
-        this.playerMatches = playerMatches;
-    }*/
-
 
     public FragmentPlayerMatch(String playerName) {
 
@@ -71,8 +62,7 @@ public class FragmentPlayerMatch extends Fragment {
                             playerMatches.add(new MatchItem(objects.get(i)));
                         }
                     }
-                   matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
-                    //matchAdapter = new MatchAdapter(objects, getContext(), getActivity().getSupportFragmentManager());
+                    matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
                     RecyclerView recyclerViewMatchItem = (RecyclerView) rootView.findViewById(R.id.playerMatchesRecyclerView);
                     recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(getContext()));
                     recyclerViewMatchItem.setAdapter(matchAdapter);
@@ -86,13 +76,8 @@ public class FragmentPlayerMatch extends Fragment {
         });
 
 
-
         return rootView;
     }
-
-    /*public FragmentPlayerMatch(String challengerName) {
-        this.challengerName = challengerName;
-    }*/
 }
 
 

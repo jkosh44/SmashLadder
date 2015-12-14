@@ -65,20 +65,6 @@ public class PlayerListActivity extends AppCompatActivity {
 
         });
 
-        /*ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.findInBackground(new FindCallback<ParseUser>() {
-            @Override
-            public void done(List<ParseUser> objects, ParseException e) {
-                //playerUserList = objects;
-                playerAdapter = new PlayerAdapter(objects, context);
-
-                RecyclerView recyclerViewPlayerItem = (RecyclerView) findViewById(R.id.player_recycler_view);
-                recyclerViewPlayerItem.setLayoutManager(new LinearLayoutManager(context));
-                recyclerViewPlayerItem.setAdapter(playerAdapter);
-                recyclerViewPlayerItem.setVisibility(View.VISIBLE);
-            }
-        });*/
-
         Intent updateIntent = new Intent(PlayerListActivity.this, UpdateLadderReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(PlayerListActivity.this, 0, updateIntent, 0);
 
@@ -175,8 +161,6 @@ public class PlayerListActivity extends AppCompatActivity {
                                                 }
                                                 int newRank = challengerRank - movement;
 
-                                                //Toast.makeText(PlayerListActivity.this, "Challenger Rank: " + challengerRank + "\n Opponent Rank: " + opponentRank + "\nMovement: " + movement + "\nnew rank: " + newRank, Toast.LENGTH_LONG).show();
-
                                                 for (int i = 0; i < objects.size(); i++) {
                                                     ParseObject currRankClass = objects.get(i);
 
@@ -186,18 +170,15 @@ public class PlayerListActivity extends AppCompatActivity {
 
                                                     if (currUser.equals(challenger)) {
                                                         currRankClass.put(RegisterActivity.NUMBER, newRank);
-                                                        //Toast.makeText(PlayerListActivity.this, currRankClass.get(RegisterActivity.PLAYER).toString() + ", the challenger " + newRank, Toast.LENGTH_SHORT).show();
                                                         currRankClass.saveInBackground();
                                                     } else if (currRank >= challengerRank - movement && currRank < challengerRank) {
                                                         currRankClass.put(RegisterActivity.NUMBER, currRank + 1);
-                                                        //Toast.makeText(PlayerListActivity.this, currRankClass.get(RegisterActivity.PLAYER).toString() + " new rank" + (currRank + 1), Toast.LENGTH_SHORT).show();
-                                                        currRankClass.saveInBackground();
+                                                       currRankClass.saveInBackground();
                                                     }
                                                     currRankClass.saveInBackground(new SaveCallback() {
                                                         @Override
                                                         public void done(ParseException e) {
                                                             if (e != null) {
-                                                                //Toast.makeText(PlayerListActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                                                 e.printStackTrace();
                                                             }
                                                         }
@@ -212,7 +193,6 @@ public class PlayerListActivity extends AppCompatActivity {
                             }
                             Toast.makeText(PlayerListActivity.this, R.string.done_updating, Toast.LENGTH_SHORT).show();
                         } else {
-                            //Toast.makeText(PlayerListActivity.this, R.string.update_failed, Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                     }
@@ -220,11 +200,9 @@ public class PlayerListActivity extends AppCompatActivity {
 
 
             } catch (Exception err) {
-                //Toast.makeText(this, R.string.update_failed, Toast.LENGTH_SHORT).show();
                 err.printStackTrace();
             }
-        }
-        else {
+        } else {
             Toast.makeText(PlayerListActivity.this, R.string.must_be_fayj, Toast.LENGTH_SHORT).show();
         }
     }

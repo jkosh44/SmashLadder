@@ -1,6 +1,7 @@
 package hu.ait.android.smashladder;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -30,9 +31,7 @@ public class PlayerDetailActivity extends AppCompatActivity {
 
     private String playerName;
     private int playerRank;
-    private ArrayList<MatchItem> playerMatches;
     //TODO: get all matches such that either the challenger or opponent is playerName and create MatchItems out of them to fill up playerMatches
-    //private ArrayList<MatchItem> playerMatches = new ArrayList<>();
 
     private ViewPager playerDetailsContainer;
 
@@ -55,7 +54,6 @@ public class PlayerDetailActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         playerName = extras.getString(PlayerAdapter.BUNDLE_NAME_KEY);
         playerRank = extras.getInt(PlayerAdapter.BUNDLE_RANK_KEY);
-        //playerMatches = (ArrayList<MatchItem>) extras.getSerializable(PlayerAdapter.BUNDLE_MATCHES_KEY);
 
     }
 

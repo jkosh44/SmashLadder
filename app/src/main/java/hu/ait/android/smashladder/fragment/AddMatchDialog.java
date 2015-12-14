@@ -13,11 +13,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
-import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseRelation;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
@@ -122,7 +120,7 @@ public class AddMatchDialog extends DialogFragment {
                     newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_KEY, spinnerChallenger.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_KEY, spinnerOpponent.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_WINNER_KEY, spinnerWinner.getSelectedItem().toString());
-                    newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_CHARACHTER_KEY, spinnerChallengerCharacter.getSelectedItem().toString());
+                    newMatchParse.put(MatchListActivity.MATCH_CHALLENGER_CHARACTER_KEY, spinnerChallengerCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_OPPONENT_CHARACTER_KEY, spinnerOpponentCharacter.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_STAGE_KEY, spinnerStage.getSelectedItem().toString());
                     newMatchParse.put(MatchListActivity.MATCH_UPDATED, false);

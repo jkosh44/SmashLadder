@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity /*implements LoaderCallback
     /**
      * Id to identity READ_CONTACTS permission request.
      */
-    private static final int REQUEST_READ_CONTACTS = 0;
     public static final String EMAIL_TAG = "EMAIL_TAG";
 
 
@@ -78,16 +77,6 @@ public class LoginActivity extends AppCompatActivity /*implements LoaderCallback
 
 
         mPasswordView = (EditText) findViewById(R.id.password);
-       /* mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
-                    return true;
-                }
-                return false;
-            }
-        });*/
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -207,11 +196,6 @@ public class LoginActivity extends AppCompatActivity /*implements LoaderCallback
         //TODO: Replace this with your own logic
         return email.contains("@wesleyan.edu");
     }
-
-    /*private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
-    } */
 
     /**
      * Shows the progress UI and hides the login form.

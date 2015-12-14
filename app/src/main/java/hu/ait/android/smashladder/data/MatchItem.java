@@ -12,22 +12,20 @@ public class MatchItem {
     private String challengerName;
     private String opponentName;
     private String winner;
-    //private String loser;
     private String stage;
     private String challengerCharacter;
     private String opponentCharacter;
     //private int stockCount;
 
-
     //TODO: add to this, also make sure it's a match object?
     public MatchItem(ParseObject match) {
         this.challengerName = match.get(MatchListActivity.MATCH_CHALLENGER_KEY).toString();
-        this.challengerCharacter = match.get(MatchListActivity.MATCH_CHALLENGER_CHARACHTER_KEY).toString();
+        this.challengerCharacter = match.get(MatchListActivity.MATCH_CHALLENGER_CHARACTER_KEY).toString();
         this.opponentName = match.get(MatchListActivity.MATCH_OPPONENT_KEY).toString();
         this.opponentCharacter = match.get(MatchListActivity.MATCH_OPPONENT_CHARACTER_KEY).toString();
         this.stage = match.get(MatchListActivity.MATCH_STAGE_KEY).toString();
         this.winner = match.get(MatchListActivity.MATCH_WINNER_KEY).toString();
-        //this.loser = match.get(loser);
+        //this.stockCount = match.get(MatchListActivity.MATCH_STOCK_KEY).toString();
     }
 
     public String getChallengerName() {
@@ -77,4 +75,5 @@ public class MatchItem {
     public void setOpponentCharacter(String opponentCharacter) {
         this.opponentCharacter = opponentCharacter;
     }
+
 }
