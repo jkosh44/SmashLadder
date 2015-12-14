@@ -74,7 +74,7 @@ public class PlayerListActivity extends AppCompatActivity {
         calendar.set(Calendar.SECOND, 0);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
         Button btnTestUpdate = (Button) findViewById(R.id.btnTestUpdate);
         btnTestUpdate.setOnClickListener(new View.OnClickListener() {

@@ -12,14 +12,51 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Handler;
 
 import hu.ait.android.smashladder.MatchListActivity;
 import hu.ait.android.smashladder.R;
 import hu.ait.android.smashladder.RegisterActivity;
 
 public class UpdateService extends Service {
+    private boolean enabled = false;
+    private MyUpdateThread myUpdateThread = null;
+
     public UpdateService() {
+    }
+
+    private class MyUpdateThread extends Thread {
+        public void run() {
+            android.os.Handler h = new android.os.Handler(UpdateService.this.getMainLooper());
+
+            while (enabled) {
+                h.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //TODO: add what to do here
+                        try {
+                            testUpdate();
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+            }
+        }
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        enabled = true;
+        if(myUpdateThread == null) {
+            myUpdateThread = new MyUpdateThread();
+        }
+        myUpdateThread.start();
+        return START_STICKY;
     }
 
     @Override
@@ -28,13 +65,10 @@ public class UpdateService extends Service {
     }
 
     @Override
-    public void onStart(Intent intent, int startId) {
-        try {
-            testUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+    public void onDestroy() {
+        stopForeground(true);
+        enabled = false;
+        super.onDestroy();
     }
 
     private void testUpdate() {
@@ -55,7 +89,7 @@ public class UpdateService extends Service {
                                     currMatch.put(MatchListActivity.MATCH_UPDATED, true);
                                     currMatch.saveInBackground();
 
-                                    //get the challenger user
+                                     //get the challenger user
                                     final String challenger = currMatch.get(MatchListActivity.MATCH_CHALLENGER_KEY).toString();
                                     final String opponent = currMatch.get(MatchListActivity.MATCH_OPPONENT_KEY).toString();
 
