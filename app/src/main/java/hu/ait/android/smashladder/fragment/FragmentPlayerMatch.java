@@ -45,6 +45,11 @@ public class FragmentPlayerMatch extends Fragment {
 
     }
 
+    /*public FragmentPlayerMatch(ArrayList<MatchItem> playerMatches) {
+        this.playerMatches = playerMatches;
+    }*/
+
+
     public FragmentPlayerMatch(String playerName) {
 
         this.playerName = playerName;
@@ -55,14 +60,6 @@ public class FragmentPlayerMatch extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_player_matches, container, false);
 
-        matchAdapter = new MatchAdapter(playerMatches, getContext(), getActivity().getSupportFragmentManager());
-        //matchAdapter = new MatchAdapter(objects, getContext(), getActivity().getSupportFragmentManager());
-        RecyclerView recyclerViewMatchItem = (RecyclerView) rootView.findViewById(R.id.playerMatchesRecyclerView);
-        recyclerViewMatchItem.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerViewMatchItem.setAdapter(matchAdapter);
-        recyclerViewMatchItem.setVisibility(View.VISIBLE);
-        recyclerViewMatchItem.invalidate();
-        matchAdapter.notifyDataSetChanged();
 
         //TODO: only matches with playerName
         ParseQuery<ParseObject> query = ParseQuery.getQuery(MatchListActivity.MATCHES_TAG);

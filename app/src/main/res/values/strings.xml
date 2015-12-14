@@ -33,6 +33,10 @@
     <string name="matchhistory">Match History</string>
     <string name="name_placeholder">FayJ vs JCW</string>
     <string name="update_failed">Update failed</string>
+    <string name="currently_updating">Currently updating</string>
+    <string name="fayJ">FayJ</string>
+    <string name="done_updating">Done Updating</string>
+    <string name="must_be_fayj">Must be FayJ to update</string>
 
     <string-array name="characters">
         <item>Dr. Mario</item>

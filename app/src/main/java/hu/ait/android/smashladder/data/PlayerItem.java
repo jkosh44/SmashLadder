@@ -28,7 +28,7 @@ public class PlayerItem {
 
     public PlayerItem(ParseObject rank) {
         this.name =  rank.get(RegisterActivity.PLAYER).toString();
-        this.rank = rank.getInt(RegisterActivity.NUMBER);
+        this.rank = (int) rank.get(RegisterActivity.NUMBER);
     }
 
 

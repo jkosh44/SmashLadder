@@ -65,6 +65,8 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
     }*/
 
     public PlayerAdapter(List<ParseObject> ranks, Context context) {
+        this.context = context;
+
         List<PlayerItem> resValues = new ArrayList<>();
         for (int i = 0; i < ranks.size(); i++) {
             resValues.add(new PlayerItem(ranks.get(i)));
@@ -92,6 +94,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         holder.playerItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 Bundle playerBundle = new Bundle();
                 playerBundle.putString(BUNDLE_NAME_KEY, playerItemsList.get(position).getName());
